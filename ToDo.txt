@@ -1,5 +1,5 @@
 ﻿ToDo:
--> Ajoutez la liste des copieurs dans la liste.
+-> Fonction pour ajouter les copieurs à partir d'un fichier (Pour les options de format, etc)
 
 -> Rentrer l'adresse IP du copieur
 

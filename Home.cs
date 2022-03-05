@@ -22,7 +22,7 @@ namespace Vela31_Ineo
 
         private void TextBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            this.text_ip_address.SelectAll();
+            text_ip_address.SelectAll();
         }
 
         private void Radio_color_CheckedChanged(object sender, EventArgs e)
@@ -34,12 +34,32 @@ namespace Vela31_Ineo
                 if (selection == radio_color_yes)
                 {
                     // Afficher seulement les copieurs couleurs dans la listview
-                    MessageBox.Show("Copieur couleur");
+
+                    // Regénérer la liste
+
+                    // Parcour la liste et supprime les copieurs qui ne font pas de couleurs
+                    foreach (ListViewItem item in model_list.Items) 
+                    {
+                        if (item.SubItems[1].Text != "Yes")
+                        {
+                            model_list.Items.Remove(item);
+                        }
+                    }
                 }
                 else if (selection == radio_color_no)
                 {
                     // Afficher seulement les copieurs noir et blanc dans la listview
-                    MessageBox.Show("Copieur N/B");
+
+                    // Regénérer la liste
+
+                    // Parcours la liste et supprime les copieurs qui font de la couleurs
+                    foreach (ListViewItem item in model_list.Items)
+                    {
+                        if (item.SubItems[1].Text != "No")
+                        {
+                            model_list.Items.Remove(item);
+                        }
+                    }
                 }
             }
         }
@@ -77,7 +97,7 @@ namespace Vela31_Ineo
             }
         }
 
-        private void radio_default_color_CheckedChanged(object sender, EventArgs e)
+        private void Radio_default_color_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton selection = (RadioButton) sender;
 
@@ -90,6 +110,16 @@ namespace Vela31_Ineo
                 {
                     MessageBox.Show("Impression en N/B par défaut");
                 }
+            }
+        }
+
+        private void Text_model_search_TextChanged(object sender, EventArgs e)
+        {
+            ListViewItem foundItem = model_list.FindItemWithText(text_model_search.Text, false, 0, true);
+
+            if (foundItem != null)
+            {
+                model_list.TopItem = foundItem;
             }
         }
     }
