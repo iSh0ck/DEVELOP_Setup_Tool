@@ -36,14 +36,36 @@ namespace Vela31_Ineo
                     // Afficher seulement les copieurs couleurs dans la listview
 
                     // Regénérer la liste
-
-                    // Parcour la liste et supprime les copieurs qui ne font pas de couleurs
-                    foreach (ListViewItem item in model_list.Items) 
+                    if (radio_a3.Checked)
                     {
-                        if (item.SubItems[1].Text != "Yes")
+                        model_list.Items.Clear();
+                        Home.AddColorPrinters();
+                        Home.AddA3Printers();
+
+                        foreach (ListViewItem item in model_list.Items)
                         {
-                            model_list.Items.Remove(item);
+                            if (item.SubItems[1].Text == "No" || item.SubItems[2].Text == "A4")
+                            {
+                                model_list.Items.Remove(item);
+                            }
                         }
+                    } else if (radio_a4.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddColorPrinters();
+                        Home.AddA4Printers();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[1].Text == "No" || item.SubItems[2].Text == "A3")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else
+                    {
+                        model_list.Items.Clear();
+                        Home.AddColorPrinters();
                     }
                 }
                 else if (selection == radio_color_no)
@@ -51,14 +73,36 @@ namespace Vela31_Ineo
                     // Afficher seulement les copieurs noir et blanc dans la listview
 
                     // Regénérer la liste
-
-                    // Parcours la liste et supprime les copieurs qui font de la couleurs
-                    foreach (ListViewItem item in model_list.Items)
+                    if (radio_a3.Checked)
                     {
-                        if (item.SubItems[1].Text != "No")
+                        model_list.Items.Clear();
+                        Home.AddNonColorPrinters();
+                        Home.AddA3Printers();
+
+                        foreach (ListViewItem item in model_list.Items)
                         {
-                            model_list.Items.Remove(item);
+                            if (item.SubItems[1].Text == "Yes" || item.SubItems[2].Text == "A4")
+                            {
+                                model_list.Items.Remove(item);
+                            }
                         }
+                    } else if (radio_a4.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddNonColorPrinters();
+                        Home.AddA4Printers();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[1].Text == "Yes" || item.SubItems[2].Text == "A3")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else
+                    {
+                        model_list.Items.Clear();
+                        Home.AddNonColorPrinters();
                     }
                 }
             }
@@ -72,11 +116,77 @@ namespace Vela31_Ineo
             {
                 if (selection == radio_a3)
                 {
-                    MessageBox.Show("Copieur A3");
+                    // Afficher seulement les copieurs A3
+
+                    // Regénérer la liste
+                    if (radio_color_yes.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA3Printers();
+                        Home.AddColorPrinters();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[2].Text == "A4" || item.SubItems[1].Text == "No")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else if (radio_color_no.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA3Printers();
+                        Home.AddNonColorPrinters();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[2].Text == "A4" || item.SubItems[1].Text == "Yes")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA3Printers();
+                    }
                 }
                 else if (selection == radio_a4)
                 {
-                    MessageBox.Show("Copieur A4");
+                    // Afficher seulement les copieurs A4
+
+                    // Regénérer la liste
+                    if (radio_color_yes.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA4Printers();
+                        Home.AddColorPrinters();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[2].Text == "A3" || item.SubItems[1].Text == "No")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else if (radio_color_no.Checked)
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA4Printers();
+                        Home.AddNonColorPrinters();
+
+                        foreach (ListViewItem item in model_list.Items)
+                        {
+                            if (item.SubItems[2].Text == "A3" || item.SubItems[1].Text == "Yes")
+                            {
+                                model_list.Items.Remove(item);
+                            }
+                        }
+                    } else
+                    {
+                        model_list.Items.Clear();
+                        Home.AddA4Printers();
+                    }
                 }
             }
         }

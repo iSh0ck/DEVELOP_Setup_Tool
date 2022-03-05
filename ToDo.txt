@@ -1,6 +1,6 @@
 ﻿ToDo:
--> Fonction pour ajouter les copieurs à partir d'un fichier (Pour les options de format, etc)
 
+Fonctionnement:
 -> Rentrer l'adresse IP du copieur
 
 -> Au double clic sur le copieur dans la liste lancer le téléchargement
