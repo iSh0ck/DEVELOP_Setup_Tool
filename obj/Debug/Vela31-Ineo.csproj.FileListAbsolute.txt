@@ -19,3 +19,14 @@ C:\Users\l.oeslick\Desktop\Vela31-Ineo\obj\Debug\Vela31-Ineo.csproj.GenerateReso
 C:\Users\l.oeslick\Desktop\Vela31-Ineo\obj\Debug\Vela31-Ineo.csproj.CoreCompileInputs.cache
 C:\Users\l.oeslick\Desktop\Vela31-Ineo\obj\Debug\Vela31-Ineo.exe
 C:\Users\l.oeslick\Desktop\Vela31-Ineo\obj\Debug\Vela31-Ineo.pdb
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Debug\Vela31-Ineo.exe.config
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Debug\Vela31-Ineo.exe
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Debug\Vela31-Ineo.pdb
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.AssemblyReference.cache
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.SuggestedBindingRedirects.cache
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31_Ineo.Home.resources
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31_Ineo.Properties.Resources.resources
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.GenerateResource.cache
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.CoreCompileInputs.cache
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.exe
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.pdb
