@@ -8,6 +8,7 @@ Fonctionnement:
     > Scrapping pour download le fichier
 
 -> Vérification du téléchargement
+    > Créer un dossier download + placer le .zip dedans
     > Unzip l'archive
 
 -> Lancement de l'installation via control panel
