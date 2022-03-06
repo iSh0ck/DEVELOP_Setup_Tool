@@ -1,4 +1,5 @@
 ﻿ToDo:
+-> Terminer l'option du SMB
 
 Fonctionnement:
 -> Rentrer l'adresse IP du copieur

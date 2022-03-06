@@ -531,9 +531,9 @@ namespace Vela31_Ineo
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.text_ip_address = new System.Windows.Forms.TextBox();
+            text_ip_address = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.combo_smb = new System.Windows.Forms.ComboBox();
+            combo_smb = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.radio_default_black = new System.Windows.Forms.RadioButton();
@@ -544,7 +544,7 @@ namespace Vela31_Ineo
             this.radio_recto_only = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.combo_os = new System.Windows.Forms.ComboBox();
+            combo_os = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.start_install_btn = new System.Windows.Forms.Button();
@@ -697,7 +697,7 @@ namespace Vela31_Ineo
             // panel9
             // 
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Controls.Add(this.text_ip_address);
+            this.panel9.Controls.Add(text_ip_address);
             this.panel9.Location = new System.Drawing.Point(6, 23);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(202, 24);
@@ -715,16 +715,16 @@ namespace Vela31_Ineo
             // 
             // text_ip_address
             // 
-            this.text_ip_address.Location = new System.Drawing.Point(54, 0);
-            this.text_ip_address.Name = "text_ip_address";
-            this.text_ip_address.Size = new System.Drawing.Size(100, 20);
-            this.text_ip_address.TabIndex = 0;
-            this.text_ip_address.Text = "Printer IP Address";
-            this.text_ip_address.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
+            text_ip_address.Location = new System.Drawing.Point(54, 0);
+            text_ip_address.Name = "text_ip_address";
+            text_ip_address.Size = new System.Drawing.Size(100, 20);
+            text_ip_address.TabIndex = 0;
+            text_ip_address.Text = "Printer IP Address";
+            text_ip_address.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TextBox1_MouseClick);
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.combo_smb);
+            this.panel8.Controls.Add(combo_smb);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Location = new System.Drawing.Point(6, 119);
             this.panel8.Name = "panel8";
@@ -734,16 +734,16 @@ namespace Vela31_Ineo
             // 
             // combo_smb
             // 
-            this.combo_smb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_smb.Items.AddRange(new object[] {
+            combo_smb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            combo_smb.Items.AddRange(new object[] {
             "No",
             "31",
             "65",
             "09"});
-            this.combo_smb.Location = new System.Drawing.Point(33, 0);
-            this.combo_smb.Name = "combo_smb";
-            this.combo_smb.Size = new System.Drawing.Size(121, 21);
-            this.combo_smb.TabIndex = 0;
+            combo_smb.Location = new System.Drawing.Point(33, 0);
+            combo_smb.Name = "combo_smb";
+            combo_smb.Size = new System.Drawing.Size(121, 21);
+            combo_smb.TabIndex = 0;
             // 
             // label8
             // 
@@ -843,7 +843,7 @@ namespace Vela31_Ineo
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.combo_os);
+            this.panel5.Controls.Add(combo_os);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(6, 46);
             this.panel5.Name = "panel5";
@@ -853,11 +853,15 @@ namespace Vela31_Ineo
             // 
             // combo_os
             // 
-            this.combo_os.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_os.Location = new System.Drawing.Point(33, 1);
-            this.combo_os.Name = "combo_os";
-            this.combo_os.Size = new System.Drawing.Size(121, 21);
-            this.combo_os.TabIndex = 1;
+            combo_os.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            combo_os.Items.AddRange(new object[] {
+            "Windows 10",
+            "Windows 11",
+            "Windows 7"});
+            combo_os.Location = new System.Drawing.Point(33, 1);
+            combo_os.Name = "combo_os";
+            combo_os.Size = new System.Drawing.Size(121, 21);
+            combo_os.TabIndex = 1;
             // 
             // label5
             // 
@@ -887,6 +891,7 @@ namespace Vela31_Ineo
             this.start_install_btn.TabIndex = 4;
             this.start_install_btn.Text = "Start installation";
             this.start_install_btn.UseVisualStyleBackColor = true;
+            this.start_install_btn.Click += new System.EventHandler(this.start_install_btn_Click);
             // 
             // model_list
             // 
@@ -1205,7 +1210,7 @@ namespace Vela31_Ineo
 
         }
 
-        public static void AddColorPrinters()
+        public static void AddColorPrinters(System.Windows.Forms.ListView model_list)
         {
             System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 200",
@@ -1467,7 +1472,6 @@ namespace Vela31_Ineo
             "Ineo+ 759",
             "Yes",
             "A3"}, -1);
-
             model_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem58,
             listViewItem59,
@@ -2471,7 +2475,7 @@ namespace Vela31_Ineo
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox combo_os;
+        public static System.Windows.Forms.ComboBox combo_os;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton radio_recto_verso;
         private System.Windows.Forms.RadioButton radio_recto_only;
@@ -2481,7 +2485,7 @@ namespace Vela31_Ineo
         private System.Windows.Forms.RadioButton radio_default_color;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox combo_smb;
+        public static System.Windows.Forms.ComboBox combo_smb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label9;
@@ -2489,7 +2493,7 @@ namespace Vela31_Ineo
         private System.Windows.Forms.ColumnHeader Model;
         private System.Windows.Forms.ColumnHeader Color;
         private System.Windows.Forms.ColumnHeader Format;
-        public System.Windows.Forms.TextBox text_ip_address;
+        public static System.Windows.Forms.TextBox text_ip_address;
         public static System.Windows.Forms.ListView model_list;
     }
 }

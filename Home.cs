@@ -39,7 +39,7 @@ namespace Vela31_Ineo
                     if (radio_a3.Checked)
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters();
+                        Home.AddColorPrinters(Home.model_list);
                         Home.AddA3Printers();
 
                         foreach (ListViewItem item in model_list.Items)
@@ -52,7 +52,7 @@ namespace Vela31_Ineo
                     } else if (radio_a4.Checked)
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters();
+                        Home.AddColorPrinters(Home.model_list);
                         Home.AddA4Printers();
 
                         foreach (ListViewItem item in model_list.Items)
@@ -65,7 +65,7 @@ namespace Vela31_Ineo
                     } else
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters();
+                        Home.AddColorPrinters(Home.model_list);
                     }
                 }
                 else if (selection == radio_color_no)
@@ -123,7 +123,7 @@ namespace Vela31_Ineo
                     {
                         model_list.Items.Clear();
                         Home.AddA3Printers();
-                        Home.AddColorPrinters();
+                        Home.AddColorPrinters(Home.model_list);
 
                         foreach (ListViewItem item in model_list.Items)
                         {
@@ -160,7 +160,7 @@ namespace Vela31_Ineo
                     {
                         model_list.Items.Clear();
                         Home.AddA4Printers();
-                        Home.AddColorPrinters();
+                        Home.AddColorPrinters(Home.model_list);
 
                         foreach (ListViewItem item in model_list.Items)
                         {
@@ -230,6 +230,19 @@ namespace Vela31_Ineo
             if (foundItem != null)
             {
                 model_list.TopItem = foundItem;
+            }
+        }
+
+        private void start_install_btn_Click(object sender, EventArgs e)
+        {
+            // Actions lors du clic sur le bouton 
+            if (Home.combo_smb.SelectedItem != null)
+            {
+                Program.SetupSMB(Home.combo_smb.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Please select an SMB option");
             }
         }
     }
