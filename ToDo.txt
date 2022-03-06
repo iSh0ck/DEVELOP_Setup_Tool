@@ -1,5 +1,6 @@
 ﻿ToDo:
 -> Terminer l'option du SMB
+    > Créer un partage du dossier et autorisé l'utilisateur à accéder au dossier.
 
 Fonctionnement:
 -> Rentrer l'adresse IP du copieur

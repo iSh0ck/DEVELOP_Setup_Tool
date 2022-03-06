@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.IO.Compression;
 using System.IO;
 using System.DirectoryServices;
+using System.Management;
 
 namespace Vela31_Ineo
 {
@@ -79,28 +80,48 @@ namespace Vela31_Ineo
             // Vérification si on doit setup ou non le SMB
             if (agence == "31" || agence == "09" || agence == "65")
             {
-                // Création du dossier
-                Directory.CreateDirectory(@"C:\Scans");
-
-                // Création de l'utilisateur
                 try
                 {
+                    // Création de l'utilisateur
                     DirectoryEntry ad = new DirectoryEntry("WinNT://" + Environment.MachineName + ",computer");
                     DirectoryEntry newUser = ad.Children.Add("Scan", "user");
                     newUser.Invoke("SetPassword", new object[] { "Sc@nner" + agence });
                     newUser.Invoke("Put", new object[] { "Description", "Scan user for Vela printers" });
                     newUser.CommitChanges();
 
-                    MessageBox.Show("Account Created Successfully");
+                    // Création du dossier
+                    if (!Directory.Exists(@"C:\Scans"))
+                    {
+                        Directory.CreateDirectory(@"C:\Scans");
+                    }
+
+                    // Activation du partage sur le dossier
+                    ManagementClass oManagementClass = new ManagementClass("Win32_Share");
+                    ManagementBaseObject inputParameters = oManagementClass.GetMethodParameters("Create");
+                    ManagementBaseObject outputParameters;
+                    inputParameters["Description"] = "Scan folder for Vela printers";
+                    inputParameters["Name"] = "Scans";
+                    inputParameters["Path"] = @"C:\Scans";
+                    inputParameters["MaximumAllowed"] = null;
+                    // L'accès au dossier est autorisé à tout le monde (Win32_SecurityDescriptor object)
+                    inputParameters["Access"] = null;
+                    inputParameters["Password"] = "Sc@nner" + agence;
+
+                    outputParameters = oManagementClass.InvokeMethod("Create", inputParameters, null);
+
+                    if ((uint) (outputParameters.Properties["ReturnValue"].Value) != 0)
+                    {
+                        throw new Exception("There is a problem while sharing the folder.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Folder successfully created");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("SMB: " + ex.Message);
                 }
-            } 
-            else
-            {
-                MessageBox.Show("SMB no selected");
             }
         }
     }
