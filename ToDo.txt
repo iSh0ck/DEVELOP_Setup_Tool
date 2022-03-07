@@ -1,6 +1,4 @@
 ﻿ToDo:
--> Terminer l'option du SMB
-    > Créer un partage du dossier et autorisé l'utilisateur à accéder au dossier.
 
 Fonctionnement:
 -> Rentrer l'adresse IP du copieur
@@ -15,8 +13,7 @@ Fonctionnement:
 
 -> Lancement de l'installation via control panel
 -> Paramétrage du pilotes en décochant les cases qu'il faut
--> Création d'un dossier "Scans"
--> Création d'un utilisateur scan avec le mot de passe qui convient
+-> Paramétrage sur l'interface web du SMB avec le nom d'hôte et le chemin du PC (Scrapping)
 
 Optionnel:
 -> Possibilité d'ajout des emails automatiquement depuis un fichier

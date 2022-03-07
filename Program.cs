@@ -7,6 +7,9 @@ using System.IO.Compression;
 using System.IO;
 using System.DirectoryServices;
 using System.Management;
+using System.Diagnostics;
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 namespace Vela31_Ineo
 {
@@ -96,27 +99,22 @@ namespace Vela31_Ineo
                     }
 
                     // Activation du partage sur le dossier
-                    ManagementClass oManagementClass = new ManagementClass("Win32_Share");
-                    ManagementBaseObject inputParameters = oManagementClass.GetMethodParameters("Create");
-                    ManagementBaseObject outputParameters;
-                    inputParameters["Description"] = "Scan folder for Vela printers";
-                    inputParameters["Name"] = "Scans";
-                    inputParameters["Path"] = @"C:\Scans";
-                    inputParameters["MaximumAllowed"] = null;
-                    // L'accès au dossier est autorisé à tout le monde (Win32_SecurityDescriptor object)
-                    inputParameters["Access"] = null;
-                    inputParameters["Password"] = "Sc@nner" + agence;
+                    Process cmd = new Process();
+                    cmd.StartInfo.FileName = "cmd.exe";
+                    cmd.StartInfo.RedirectStandardInput = true;
+                    cmd.StartInfo.RedirectStandardOutput = true;
+                    cmd.StartInfo.CreateNoWindow = true;
+                    cmd.StartInfo.UseShellExecute = false;
+                    cmd.Start();
 
-                    outputParameters = oManagementClass.InvokeMethod("Create", inputParameters, null);
+                    cmd.StandardInput.WriteLine(@"net share Scans=C:\Scans");
+                    cmd.StandardInput.Flush();
 
-                    if ((uint) (outputParameters.Properties["ReturnValue"].Value) != 0)
-                    {
-                        throw new Exception("There is a problem while sharing the folder.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Folder successfully created");
-                    }
+                    // Ajouter les permissions sur le dossier à l'utilisateur scan
+                    cmd.StandardInput.WriteLine("icacls " + '"' + @"C:\Scans" + '"' + " /grant Scan:(OI)(CI)F /T");
+                    cmd.StandardInput.Flush();
+                    cmd.StandardInput.Close();
+                    cmd.WaitForExit();
                 }
                 catch (Exception ex)
                 {
