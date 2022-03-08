@@ -235,15 +235,18 @@ namespace Vela31_Ineo
 
         private void start_install_btn_Click(object sender, EventArgs e)
         {
+            // Test shortcut
+            Program.ShortcutTest();
+
             // Actions lors du clic sur le bouton 
-            if (Home.combo_smb.SelectedItem != null)
+            /*if (Home.combo_smb.SelectedItem != null)
             {
-                Program.SetupSMB(Home.combo_smb.SelectedItem.ToString());
+                // Program.SetupSMB(Home.combo_smb.SelectedItem.ToString());
             }
             else
             {
                 MessageBox.Show("Please select an SMB option");
-            }
+            }*/
         }
     }
 }

@@ -30,3 +30,5 @@ F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Debug\Vela31-Ineo.exe
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Debug\Vela31-Ineo.pdb
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.exe
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.pdb
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Interop.IWshRuntimeLibrary.dll
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.ResolveComReference.cache

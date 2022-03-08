@@ -10,6 +10,7 @@ using System.Management;
 using System.Diagnostics;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using IWshRuntimeLibrary;
 
 namespace Vela31_Ineo
 {
@@ -38,7 +39,7 @@ namespace Vela31_Ineo
 
         /*
          * 
-         * ---------------------- A TEST ----------------------
+         * ---------------------- TERMINER ----------------------
          * 
          */
         public static void UnzipArchive(String file)
@@ -69,7 +70,7 @@ namespace Vela31_Ineo
 
         /*
          * 
-         * --------------------- A TERMINER ---------------------
+         * --------------------- TERMINER ---------------------
          * 
          */
         public static void SetupSMB(String agence)
@@ -115,12 +116,34 @@ namespace Vela31_Ineo
                     cmd.StandardInput.Flush();
                     cmd.StandardInput.Close();
                     cmd.WaitForExit();
+
+                    // Créer un raccourcis vers le bureau
+                    string desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                    WshShell wshShell = new WshShell();
+                    string settingsLink = Path.Combine(desktopFolder, "Scans.lnk");
+                    IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(settingsLink);
+                    shortcut.TargetPath = @"C:\Scans";
+                    shortcut.Description = "Dossier raccourcis Scans";
+                    shortcut.Save();
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("SMB: " + ex.Message);
                 }
             }
+        }
+
+        public static void ShortcutTest()
+        {
+            // Créer un raccourcis vers le bureau
+            string desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            WshShell wshShell = new WshShell();
+            string settingsLink = Path.Combine(desktopFolder, "Scans.lnk");
+            IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(settingsLink);
+            shortcut.TargetPath = @"C:\Scans";
+            shortcut.Description = "Dossier raccourcis Scans";
+            shortcut.Save();
         }
     }
 }
