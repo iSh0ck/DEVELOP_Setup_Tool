@@ -77,7 +77,6 @@ namespace Vela31_Ineo
         {
             /* 
              * - Paramétrage du SMB:
-             *  > Activer le partage sur le dossier avec l'utilisateur créer
              *  > Réccupération du hostname + ajout dans l'interface web
              */
 
@@ -132,18 +131,6 @@ namespace Vela31_Ineo
                     MessageBox.Show("SMB: " + ex.Message);
                 }
             }
-        }
-
-        public static void ShortcutTest()
-        {
-            // Créer un raccourcis vers le bureau
-            string desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-            WshShell wshShell = new WshShell();
-            string settingsLink = Path.Combine(desktopFolder, "Scans.lnk");
-            IWshShortcut shortcut = (IWshShortcut)wshShell.CreateShortcut(settingsLink);
-            shortcut.TargetPath = @"C:\Scans";
-            shortcut.Description = "Dossier raccourcis Scans";
-            shortcut.Save();
         }
     }
 }
