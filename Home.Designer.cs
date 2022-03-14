@@ -81,10 +81,6 @@ namespace Vela31_Ineo
             "Ineo 368",
             "No",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo 4020",
-            "No",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo 4050",
             "No",
@@ -237,16 +233,8 @@ namespace Vela31_Ineo
             "Ineo+ 3851",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4020i",
             "Yes",
             "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -277,14 +265,6 @@ namespace Vela31_Ineo
             "Ineo+ 458",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem105 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem106 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5020i",
-            "Yes",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem108 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 550i",
             "Yes",
@@ -731,7 +711,6 @@ namespace Vela31_Ineo
             listViewItem24.StateImageIndex = 0;
             listViewItem25.StateImageIndex = 0;
             listViewItem26.StateImageIndex = 0;
-            listViewItem27.StateImageIndex = 0;
             listViewItem28.StateImageIndex = 0;
             listViewItem29.StateImageIndex = 0;
             listViewItem33.StateImageIndex = 0;
@@ -770,9 +749,7 @@ namespace Vela31_Ineo
             listViewItem91.StateImageIndex = 0;
             listViewItem92.StateImageIndex = 0;
             listViewItem93.StateImageIndex = 0;
-            listViewItem94.StateImageIndex = 0;
             listViewItem95.StateImageIndex = 0;
-            listViewItem96.StateImageIndex = 0;
             listViewItem97.StateImageIndex = 0;
             listViewItem99.StateImageIndex = 0;
             listViewItem100.StateImageIndex = 0;
@@ -780,8 +757,6 @@ namespace Vela31_Ineo
             listViewItem102.StateImageIndex = 0;
             listViewItem103.StateImageIndex = 0;
             listViewItem104.StateImageIndex = 0;
-            listViewItem105.StateImageIndex = 0;
-            listViewItem106.StateImageIndex = 0;
             listViewItem108.StateImageIndex = 0;
             listViewItem110.StateImageIndex = 0;
             listViewItem111.StateImageIndex = 0;
@@ -808,7 +783,6 @@ namespace Vela31_Ineo
             listViewItem24,
             listViewItem25,
             listViewItem26,
-            listViewItem27,
             listViewItem28,
             listViewItem29,
             listViewItem33,
@@ -847,9 +821,7 @@ namespace Vela31_Ineo
             listViewItem91,
             listViewItem92,
             listViewItem93,
-            listViewItem94,
             listViewItem95,
-            listViewItem96,
             listViewItem97,
             listViewItem99,
             listViewItem100,
@@ -857,8 +829,6 @@ namespace Vela31_Ineo
             listViewItem102,
             listViewItem103,
             listViewItem104,
-            listViewItem105,
-            listViewItem106,
             listViewItem108,
             listViewItem110,
             listViewItem111,
@@ -1024,16 +994,8 @@ namespace Vela31_Ineo
             "Ineo+ 3851",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4020i",
             "Yes",
             "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem(new string[] {
@@ -1064,14 +1026,6 @@ namespace Vela31_Ineo
             "Ineo+ 458",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem105 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem106 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5020i",
-            "Yes",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem108 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 550i",
             "Yes",
@@ -1143,9 +1097,7 @@ namespace Vela31_Ineo
             listViewItem91,
             listViewItem92,
             listViewItem93,
-            listViewItem94,
             listViewItem95,
-            listViewItem96,
             listViewItem97,
             listViewItem99,
             listViewItem100,
@@ -1153,8 +1105,6 @@ namespace Vela31_Ineo
             listViewItem102,
             listViewItem103,
             listViewItem104,
-            listViewItem105,
-            listViewItem106,
             listViewItem108,
             listViewItem110,
             listViewItem111,
@@ -1223,10 +1173,6 @@ namespace Vela31_Ineo
             "Ineo 368",
             "No",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo 4020",
-            "No",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo 4050",
             "No",
@@ -1306,7 +1252,6 @@ namespace Vela31_Ineo
             listViewItem24,
             listViewItem25,
             listViewItem26,
-            listViewItem27,
             listViewItem28,
             listViewItem29,
             listViewItem33,
@@ -1622,10 +1567,6 @@ namespace Vela31_Ineo
             "Ineo 3320",
             "No",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo 4020",
-            "No",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo 4050",
             "No",
@@ -1674,34 +1615,17 @@ namespace Vela31_Ineo
             "Ineo+ 3851",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem94 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem95 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem96 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 4020i",
             "Yes",
             "A4"}, -1);
             System.Windows.Forms.ListViewItem listViewItem97 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4050i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem105 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5000i",
-            "Yes",
-            "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem106 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 5020i",
-            "Yes",
-            "A4"}, -1);
 
             model_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem18,
-            listViewItem27,
             listViewItem28,
             listViewItem29,
             listViewItem33,
@@ -1714,12 +1638,8 @@ namespace Vela31_Ineo
             listViewItem82,
             listViewItem92,
             listViewItem93,
-            listViewItem94,
             listViewItem95,
-            listViewItem96,
-            listViewItem97,
-            listViewItem105,
-            listViewItem106});
+            listViewItem97});
         }
 
         #endregion

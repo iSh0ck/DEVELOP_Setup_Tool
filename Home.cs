@@ -235,12 +235,18 @@ namespace Vela31_Ineo
 
         private void start_install_btn_Click(object sender, EventArgs e)
         {
-            // Test shortcut
-            Program.ShortcutTest();
+            // Actions lors du clic sur le bouton
 
-            // Actions lors du clic sur le bouton 
+            /*
+             * Vérifier que le formulaire est bien remplis
+             */
+            
+            // Téléchargement du driver
+            // Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+
             /*if (Home.combo_smb.SelectedItem != null)
             {
+                // Paramétrage du SMB
                 // Program.SetupSMB(Home.combo_smb.SelectedItem.ToString());
             }
             else

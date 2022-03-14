@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Security.AccessControl;
 using System.Security.Principal;
 using IWshRuntimeLibrary;
+using System.Net;
 
 namespace Vela31_Ineo
 {
@@ -29,13 +30,42 @@ namespace Vela31_Ineo
 
         /*
          * 
-         * --------------------- A FAIRE ---------------------
+         * --------------------- TERMINER ---------------------
          * 
          */
         public static void DownloadDriver(String os, String model_name)
         {
             // Téléchargement du driver depuis internet
+            // Adresse du serveur de téléchargement
+            String server = "51.158.153.181";
+
+            // Création du dossier téléchargement
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\Download"))
+            {
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\Download");
+            }
+            String url = "http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip";
+
+            MessageBox.Show(url);
+
+            using (WebClient client = new WebClient())
+            {
+                // Mettre à jour la progressbar
+                // wc.DownloadProgressChanged += wc_DownloadProgressChanged;
+                client.DownloadFileAsync(
+                    new System.Uri("http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip"),
+                    Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+            }
         }
+
+        /* // Event pour suivis du télécharment
+         * 
+         * // Event to track the progress
+        void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
+        }
+        */
 
         /*
          * 
@@ -56,6 +86,7 @@ namespace Vela31_Ineo
         public static void InstallDriver(String model_name, String ipaddr, String default_mode, String default_print)
         {
             // Installation du driver
+            String driverPath = @"";
         }
 
         /*
@@ -70,16 +101,11 @@ namespace Vela31_Ineo
 
         /*
          * 
-         * --------------------- TERMINER ---------------------
+         * --------------------- A TERMINER ---------------------
          * 
          */
         public static void SetupSMB(String agence)
         {
-            /* 
-             * - Paramétrage du SMB:
-             *  > Réccupération du hostname + ajout dans l'interface web
-             */
-
             // Vérification si on doit setup ou non le SMB
             if (agence == "31" || agence == "09" || agence == "65")
             {
