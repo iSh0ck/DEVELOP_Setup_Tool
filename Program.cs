@@ -12,11 +12,14 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using IWshRuntimeLibrary;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace Vela31_Ineo
 {
     static class Program
     {
+        [DllImport("printui.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        private static extern void PrintUIEntryW(IntPtr hwnd, IntPtr hinst, string lpszCmdLine, int nCmdShow);
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -75,18 +78,69 @@ namespace Vela31_Ineo
         public static void UnzipArchive(String file)
         {
             // Unzip du fichier 
-            ZipFile.ExtractToDirectory(file, Directory.GetCurrentDirectory());
+            ZipFile.ExtractToDirectory(file, Directory.GetCurrentDirectory() + @"\Download");
         }
 
         /*
          * 
-         * --------------------- A FAIRE ---------------------
-         * 
+         * --------------------- A TEST ---------------------
+         *         VERIFIER AVANT AVEC DES MESSAGES BOX
          */
         public static void InstallDriver(String model_name, String ipaddr, String default_mode, String default_print)
         {
+            // Lancement d'un CMD pour utiliser les scripts windows
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
             // Installation du driver
-            String driverPath = @"";
+            cmd.StandardInput.WriteLine(@"cd C:\Windows\System32\Printing_Admin_Scripts\fr-FR");
+            cmd.StandardInput.Flush();
+            String pathToInfFile = @"C:\WINDOWS\inf";
+
+            // Trouver le nom du fichier complet .inf
+            String [] files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\Download");
+            String filename = "";
+            foreach (String file in files)
+            {
+                filename = Path.GetFileName(file);
+                if (Path.GetExtension(filename) == ".inf")
+                {
+                    filename = Path.GetFileName(file);
+                    break;
+                }
+            }
+
+            // Si pas d'extension trouvée message d'erreur
+            if (filename == "")
+            {
+                throw new Exception("Le fichier .inf n'a pas pu être trouvé");
+            }
+
+            String downloadedInfFile = Directory.GetCurrentDirectory() + @"\Download\" + filename;
+            cmd.StandardInput.WriteLine("cscript prndrvr.vbs -a -m " +
+                                        '"' + model_name + '"' + " -h " +
+                                        '"' + pathToInfFile + '"' + "-i " +
+                                        '"' + downloadedInfFile + '"');
+            cmd.StandardInput.Flush();
+
+            // Création du port TCP/IP
+            cmd.StandardInput.WriteLine("cscript prnport.vbs -a -r IP_" + ipaddr + " -h " + ipaddr + " -o raw");
+            cmd.StandardInput.Flush();
+
+            // Installation de l'imprimante
+            cmd.StandardInput.WriteLine("cscript prnmngr.vbs -a -p " + 
+                                        '"' + "Copieur " + model_name + '"' + " -m " + 
+                                        '"' + model_name + '"' + " -r " + ipaddr);
+            cmd.StandardInput.Flush();
+
+            // Fermeture du cmd
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
         }
 
         /*
@@ -96,7 +150,7 @@ namespace Vela31_Ineo
          */
         public static void SetupPrinterInWebPanel(String ipaddr)
         {
-            // Paramétrage depuis l'interface web
+            // Paramétrage depuis l'interface web (Utiliser Selenium)
         }
 
         /*
