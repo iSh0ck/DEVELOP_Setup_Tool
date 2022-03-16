@@ -3,6 +3,7 @@
 - Paramétrage du SMB:
     > Réccupération du hostname + ajout dans l'interface web
 - Option Debug avec affichage des étapes lors du clic sur le bouton
+- Download et unzip dans le OnClick, patienter tant que download pas 100% (passer variable en publique)
 
 Fonctionnement:
 -> Rentrer l'adresse IP du copieur

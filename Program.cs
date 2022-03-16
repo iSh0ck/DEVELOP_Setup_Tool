@@ -54,7 +54,7 @@ namespace Vela31_Ineo
             using (WebClient client = new WebClient())
             {
                 // Mettre à jour la progressbar
-                // wc.DownloadProgressChanged += wc_DownloadProgressChanged;
+                // client.DownloadProgressChanged += client_DownloadProgressChanged;
                 client.DownloadFileAsync(
                     new System.Uri("http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip"),
                     Directory.GetCurrentDirectory() + @"\Download\driver.zip");
@@ -62,9 +62,7 @@ namespace Vela31_Ineo
         }
 
         /* // Event pour suivis du télécharment
-         * 
-         * // Event to track the progress
-        void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
         }
@@ -85,17 +83,22 @@ namespace Vela31_Ineo
          * 
          * --------------------- A TEST ---------------------
          *         VERIFIER AVANT AVEC DES MESSAGES BOX
+         *         
          */
         public static void InstallDriver(String model_name, String ipaddr, String default_mode, String default_print)
         {
             // Lancement d'un CMD pour utiliser les scripts windows
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
+            //cmd.StartInfo.RedirectStandardInput = true;
+            //cmd.StartInfo.RedirectStandardOutput = true;
+            //cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
+
+            // Positionnement sur le disque C
+            cmd.StandardInput.WriteLine("C:");
+            cmd.StandardInput.Flush();
 
             // Installation du driver
             cmd.StandardInput.WriteLine(@"cd C:\Windows\System32\Printing_Admin_Scripts\fr-FR");
