@@ -57,7 +57,7 @@ namespace Vela31_Ineo
             {
                 // Mettre à jour la progressbar
                 // client.DownloadProgressChanged += client_DownloadProgressChanged;
-                client.DownloadFileAsync(
+                client.DownloadFile(
                     new System.Uri("http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip"),
                     Directory.GetCurrentDirectory() + @"\Download\driver.zip");
             }

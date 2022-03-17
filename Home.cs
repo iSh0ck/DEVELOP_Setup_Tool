@@ -243,9 +243,9 @@ namespace Vela31_Ineo
              */
             
             // Téléchargement du driver
-            // Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
-            // Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
-            Program.InstallDriver(model_list.SelectedItems[0].Text, "192.168.1.200", null, null);
+            Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+            Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+            Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
 
             /*if (Home.combo_smb.SelectedItem != null)
             {
