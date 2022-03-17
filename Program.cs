@@ -18,16 +18,18 @@ namespace Vela31_Ineo
 {
     static class Program
     {
-        [DllImport("printui.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        private static extern void PrintUIEntryW(IntPtr hwnd, IntPtr hinst, string lpszCmdLine, int nCmdShow);
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
+
+        public static IDictionary<string, string> drivers = new Dictionary<string, string>();
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AddPrintersDrivers();
             Application.Run(new Home());
         }
 
@@ -90,9 +92,9 @@ namespace Vela31_Ineo
             // Lancement d'un CMD pour utiliser les scripts windows
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
-            //cmd.StartInfo.RedirectStandardInput = true;
-            //cmd.StartInfo.RedirectStandardOutput = true;
-            //cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
             cmd.Start();
 
@@ -103,7 +105,8 @@ namespace Vela31_Ineo
             // Installation du driver
             cmd.StandardInput.WriteLine(@"cd C:\Windows\System32\Printing_Admin_Scripts\fr-FR");
             cmd.StandardInput.Flush();
-            String pathToInfFile = @"C:\WINDOWS\inf";
+
+            String pathToInfFile = Directory.GetCurrentDirectory() + @"\Download";
 
             // Trouver le nom du fichier complet .inf
             String [] files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\Download");
@@ -126,8 +129,8 @@ namespace Vela31_Ineo
 
             String downloadedInfFile = Directory.GetCurrentDirectory() + @"\Download\" + filename;
             cmd.StandardInput.WriteLine("cscript prndrvr.vbs -a -m " +
-                                        '"' + model_name + '"' + " -h " +
-                                        '"' + pathToInfFile + '"' + "-i " +
+                                        '"' + GetDriverName(model_name) + '"' + " -h " +
+                                        '"' + pathToInfFile + '"' + " -i " +
                                         '"' + downloadedInfFile + '"');
             cmd.StandardInput.Flush();
 
@@ -138,7 +141,7 @@ namespace Vela31_Ineo
             // Installation de l'imprimante
             cmd.StandardInput.WriteLine("cscript prnmngr.vbs -a -p " + 
                                         '"' + "Copieur " + model_name + '"' + " -m " + 
-                                        '"' + model_name + '"' + " -r " + ipaddr);
+                                        '"' + GetDriverName(model_name) + '"' + " -r IP_" + ipaddr);
             cmd.StandardInput.Flush();
 
             // Fermeture du cmd
@@ -214,6 +217,129 @@ namespace Vela31_Ineo
                     MessageBox.Show("SMB: " + ex.Message);
                 }
             }
+        }
+
+        public static string GetDriverName(string model_name)
+        {
+            return drivers[model_name];
+        }
+
+        public static void AddPrintersDrivers()
+        {
+            // Adding Generic Universal PCL printers to the list
+            drivers.Add("Ineo 224", "Generic Universal PCL");
+            drivers.Add("Ineo 224e", "Generic Universal PCL");
+            drivers.Add("Ineo 284e", "Generic Universal PCL");
+            drivers.Add("Ineo 362", "Generic Universal PCL");
+            drivers.Add("Ineo 364e", "Generic Universal PCL");
+            drivers.Add("Ineo 454e", "Generic Universal PCL");
+            drivers.Add("Ineo 554e", "Generic Universal PCL");
+            drivers.Add("Ineo 654", "Generic Universal PCL");
+            drivers.Add("Ineo 654e", "Generic Universal PCL");
+            drivers.Add("Ineo 754", "Generic Universal PCL");
+            drivers.Add("Ineo 754e", "Generic Universal PCL");
+            drivers.Add("Ineo 3320", "Generic Universal PCL");
+            drivers.Add("Ineo 4020", "Generic Universal PCL");
+            drivers.Add("Ineo+ 224", "Generic Universal PCL");
+            drivers.Add("Ineo+ 224e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 250", "Generic Universal PCL");
+            drivers.Add("Ineo+ 284", "Generic Universal PCL");
+            drivers.Add("Ineo+ 284e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 364", "Generic Universal PCL");
+            drivers.Add("Ineo+ 364e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 451", "Generic Universal PCL");
+            drivers.Add("Ineo+ 452", "Generic Universal PCL");
+            drivers.Add("Ineo+ 454", "Generic Universal PCL");
+            drivers.Add("Ineo+ 454e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 554", "Generic Universal PCL");
+            drivers.Add("Ineo+ 554e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 654", "Generic Universal PCL");
+            drivers.Add("Ineo+ 654e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 754", "Generic Universal PCL");
+            drivers.Add("Ineo+ 754e", "Generic Universal PCL");
+
+            // Adding Generic 65C-0iSeriesPCL printers to the list
+            drivers.Add("Ineo+ 450i", "Generic 65C-0iSeriesPCL");
+            drivers.Add("Ineo+ 550i", "Generic 65C-0iSeriesPCL");
+            drivers.Add("Ineo+ 650i", "Generic 65C-0iSeriesPCL");
+
+            // Adding Generic 36C-0iSeriesPCL printers to the list
+            drivers.Add("Ineo+ 250i", "Generic 36C-0iSeriesPCL");
+            drivers.Add("Ineo+ 300i", "Generic 36C-0iSeriesPCL");
+            drivers.Add("Ineo+ 360i", "Generic 36C-0iSeriesPCL");
+
+            // Adding Generic C405-0iSeriesPCL printers to the list
+            drivers.Add("Ineo+ 4050i", "Generic C405-0iSeriesPCL");
+
+            // Adding Generic C400-0iSeriesPCL printers to the list
+            drivers.Add("Ineo+ 4000i", "Generic C400-0iSeriesPCL");
+
+            // Adding Generic C400-0iSeriesPCL printers to the list
+            drivers.Add("Ineo+ 3300i", "Generic C332-0i PCL");
+            drivers.Add("Ineo+ 3320i", "Generic C332-0i PCL");
+            drivers.Add("Ineo+ 3350i", "Generic C332-0i PCL");
+
+            // Adding Generic 65C-9SeriesPCL printers to the list
+            drivers.Add("Ineo+ 458", "Generic 65C-9SeriesPCL");
+            drivers.Add("Ineo+ 558", "Generic 65C-9SeriesPCL");
+            drivers.Add("Ineo+ 658", "Generic 65C-9SeriesPCL");
+
+            // Adding Generic 36C-9SeriesPCL printers to the list
+            drivers.Add("Ineo+ 258", "Generic 36C-9SeriesPCL");
+            drivers.Add("Ineo+ 308", "Generic 36C-9SeriesPCL");
+            drivers.Add("Ineo+ 368", "Generic 36C-9SeriesPCL");
+
+            // Adding Generic 28C-8SeriesPCL printers to the list
+            drivers.Add("Ineo+ 227", "Generic 28C-8SeriesPCL");
+            drivers.Add("Ineo+ 287", "Generic 28C-8SeriesPCL");
+
+            // Adding Generic C MF385-2SeriesPCL printers to the list
+            drivers.Add("Ineo+ 3851", "Generic C MF385-2SeriesPCL");
+
+            // Adding Generic 70C-10SeriesPCL printers to the list
+            drivers.Add("Ineo+ 659", "Generic 70C-10SeriesPCL");
+            drivers.Add("Ineo+ 759", "Generic 70C-10SeriesPCL");
+
+            // Adding C MF311-1 PCL6 printers to the list
+            drivers.Add("Ineo+ 3110", "C MF311-1 PCL6");
+
+            // Adding C MF385-1 Series PCL6 printers to the list
+            drivers.Add("Ineo+ 3350", "C MF385-1 Series PCL6");
+            drivers.Add("Ineo+ 3850", "C MF385-1 Series PCL6");
+
+            // Adding Generic 95BW-9SeriesPCL printers to the list
+            drivers.Add("Ineo 758", "Generic 95BW-9SeriesPCL");
+
+            // Adding Generic 55BW-9SeriesPCL printers to the list
+            drivers.Add("Ineo 458", "Generic 55BW-9SeriesPCL");
+            drivers.Add("Ineo 458e", "Generic 55BW-9SeriesPCL");
+            drivers.Add("Ineo 558", "Generic 55BW-9SeriesPCL");
+            drivers.Add("Ineo 558e", "Generic 55BW-9SeriesPCL");
+
+            // Adding Generic 36BW-9SeriesPCL printers to the list
+            drivers.Add("Ineo 308", "Generic 36BW-9SeriesPCL");
+            drivers.Add("Ineo 308e", "Generic 36BW-9SeriesPCL");
+            drivers.Add("Ineo 368", "Generic 36BW-9SeriesPCL");
+
+            // Adding Generic 36BW-8SeriesPCL printers to the list
+            drivers.Add("Ineo 227", "Generic 36BW-8SeriesPCL");
+            drivers.Add("Ineo 287", "Generic 36BW-8SeriesPCL");
+            drivers.Add("Ineo 367", "Generic 36BW-8SeriesPCL");
+
+            // Adding Generic BW MF475-3SeriesPCL printers to the list
+            drivers.Add("Ineo 4052", "Generic BW MF475-3SeriesPCL");
+            drivers.Add("Ineo 4752", "Generic BW MF475-3SeriesPCL");
+
+            // Adding BW MF442-3_362-3 PCL6 printers to the list
+            drivers.Add("Ineo 4422", "BW MF442-3_362-3 PCL6");
+
+            // Adding BW MF475-1 Series PCL6 printers to the list
+            drivers.Add("Ineo 4050", "BW MF475-1 Series PCL6");
+            drivers.Add("Ineo 4750", "BW MF475-1 Series PCL6");
+
+            // Adding Generic 30BW-6iSeriesPCL printers to the list
+            drivers.Add("Ineo 266i", "Generic 30BW-6iSeriesPCL");
+            drivers.Add("Ineo 306i", "Generic 30BW-6iSeriesPCL");
         }
     }
 }
