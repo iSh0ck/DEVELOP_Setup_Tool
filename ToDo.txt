@@ -1,11 +1,8 @@
 ﻿ToDo:
 - Idées:
-    > Option Install SMB Only
-    > Activer le SMB 1.0 sur les PC (PowerShell: "Set-SmbServerConfiguration –EnableSMB1Protocol $true")
     > Paramétrage dans le pilote automatique (Voir comment ça fonctionne)
     > Ajouter liste d'emails dans le copieur depuis un Excel
 
 - A faire: 
-    > Suppression dossier Download à la fin de l'exécution
     > Paramétrage du SMB:
         * Réccupération du hostname + ajout dans l'interface web

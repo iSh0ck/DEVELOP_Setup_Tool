@@ -234,18 +234,20 @@ namespace Vela31_Ineo
             }
         }
 
-        private void start_install_btn_Click(object sender, EventArgs e)
+        private void Start_install_btn_Click(object sender, EventArgs e)
         {
             // Actions lors du clic sur le bouton
 
             /*
              * Vérifier que le formulaire est bien remplis
              */
-            
+
+            // Program.EnableSMB1();
+
             // Téléchargement du driver
-            Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
-            Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
-            Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
+            //Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+            //Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+            //Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
 
             /*if (Home.combo_smb.SelectedItem != null)
             {

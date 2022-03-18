@@ -13,6 +13,7 @@ using System.Security.Principal;
 using IWshRuntimeLibrary;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Management.Automation;
 
 namespace Vela31_Ineo
 {
@@ -147,6 +148,8 @@ namespace Vela31_Ineo
             // Fermeture du cmd
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+
+            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download");
         }
 
         /*
@@ -211,11 +214,29 @@ namespace Vela31_Ineo
                     shortcut.Description = "Dossier raccourcis Scans";
                     shortcut.Save();
 
+                    // Activation SMB v1.0
+                    PowerShell shell = PowerShell.Create();
+                    shell.AddCommand("Set-SmbServerConfiguration").AddParameter("EnableSMB1Protocol", "$true");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("SMB: " + ex.Message);
                 }
+            }
+        }
+
+        public static void EnableSMB1()
+        {
+            try
+            {
+                PowerShell shell = PowerShell.Create();
+                shell.AddCommand("Enable-WindowsOptionalFeature")
+                    .AddParameter("Online")
+                    .AddParameter("FeatureName", "SMB1Protocol").Invoke();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Un redémarrage est nécessaire afin de terminer l'activation SMB 1.0");
             }
         }
 
