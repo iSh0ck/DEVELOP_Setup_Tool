@@ -149,7 +149,7 @@ namespace Vela31_Ineo
             cmd.StandardInput.Close();
             cmd.WaitForExit();
 
-            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download");
+            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download", delete);
         }
 
         /*
