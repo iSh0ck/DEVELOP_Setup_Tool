@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Vela31_Ineo
@@ -247,26 +248,76 @@ namespace Vela31_Ineo
         {
             // Actions lors du clic sur le bouton
 
-            /*
-             * Vérifier que le formulaire est bien remplis
-             */
-
-            // Program.EnableSMB1();
-
-            // Téléchargement du driver
-            //Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
-            //Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
-            //Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
-
-            /*if (Home.combo_smb.SelectedItem != null)
+            // Vérification si activation du SMB seulement
+            if (check_smb_only.Checked)
             {
-                // Paramétrage du SMB
-                // Program.SetupSMB(Home.combo_smb.SelectedItem.ToString());
+                if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
+                {
+                    // Paramétrage du SMB
+                    Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
+
+                    // Vérification si activation du SMB v1.0
+                    if (this.check_smb1.Checked)
+                    {
+                        Program.EnableSMB1();
+                    }
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Please select an SMB option");
+                }
+            }
+
+            // Vérification du formulaire
+            if (model_list.SelectedItems.Count == 1)
+            {
+                if (this.text_ip_address != null && this.text_ip_address.Text != "")
+                {
+                    if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
+                    {
+                        // Téléchargement du driver
+                        Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+                        
+                        // Unzip du driver dans le répertoir Download
+                        Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+                        
+                        // Installation du driver
+                        Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
+
+                        if (this.combo_smb.SelectedItem != null)
+                        {
+                            // Paramétrage du SMB
+                            Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select an SMB option");
+                        }
+
+                        // Vérification si activation du SMB v1.0
+                        if (this.check_smb1.Checked)
+                        {
+                            Program.EnableSMB1();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select an SMB option");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid IP address");
+                    return;
+                }
             }
             else
             {
-                MessageBox.Show("Please select an SMB option");
-            }*/
+                MessageBox.Show("Please select a model in the model list");
+                return;
+            }
         }
     }
 }

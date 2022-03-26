@@ -149,16 +149,12 @@ namespace Vela31_Ineo
             cmd.StandardInput.Close();
             cmd.WaitForExit();
 
-<<<<<<< Updated upstream
-            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download", delete);
-=======
             if (Home.check_setAsDefault.Checked)
             {
                 PrinterClass.SetDefaultPrinter("Copieur " + model_name);
             }
 
-            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download");
->>>>>>> Stashed changes
+            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download", true);
         }
 
         /*
@@ -233,7 +229,6 @@ namespace Vela31_Ineo
                 }
             }
         }
-
         public static void EnableSMB1()
         {
             try
