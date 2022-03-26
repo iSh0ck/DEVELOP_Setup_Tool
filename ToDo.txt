@@ -1,8 +1,10 @@
 ﻿ToDo:
 - Idées:
     > Paramétrage dans le pilote automatique (Voir comment ça fonctionne)
-    > Ajouter liste d'emails dans le copieur depuis un Excel
+    > Ajouter liste d'emails dans le copieur depuis un 
+    > Possibilité de lancé une impression test directement à la fin de l'installation
 
 - A faire: 
+    > Test fonctionnement pour copieur par défaut
     > Paramétrage du SMB:
         * Réccupération du hostname + ajout dans l'interface web

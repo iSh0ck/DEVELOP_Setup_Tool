@@ -345,11 +345,12 @@ namespace Vela31_Ineo
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.start_install_btn = new System.Windows.Forms.Button();
-            this.model_list = new System.Windows.Forms.ListView();
+            model_list = new System.Windows.Forms.ListView();
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Color = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Format = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.check_smb1 = new System.Windows.Forms.CheckBox();
+            check_setAsDefault = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -481,6 +482,7 @@ namespace Vela31_Ineo
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(check_setAsDefault);
             this.panel4.Controls.Add(this.check_smb1);
             this.panel4.Controls.Add(this.check_smb_only);
             this.panel4.Controls.Add(this.panel9);
@@ -491,7 +493,7 @@ namespace Vela31_Ineo
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(12, 121);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 172);
+            this.panel4.Size = new System.Drawing.Size(210, 189);
             this.panel4.TabIndex = 2;
             // 
             // check_smb_only
@@ -695,7 +697,7 @@ namespace Vela31_Ineo
             // start_install_btn
             // 
             this.start_install_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_install_btn.Location = new System.Drawing.Point(177, 299);
+            this.start_install_btn.Location = new System.Drawing.Point(178, 316);
             this.start_install_btn.Name = "start_install_btn";
             this.start_install_btn.Size = new System.Drawing.Size(110, 31);
             this.start_install_btn.TabIndex = 4;
@@ -705,13 +707,13 @@ namespace Vela31_Ineo
             // 
             // model_list
             // 
-            this.model_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            model_list.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Model,
             this.Color,
             this.Format});
-            this.model_list.FullRowSelect = true;
-            this.model_list.GridLines = true;
-            this.model_list.HideSelection = false;
+            model_list.FullRowSelect = true;
+            model_list.GridLines = true;
+            model_list.HideSelection = false;
             listViewItem1.StateImageIndex = 0;
             listViewItem2.StateImageIndex = 0;
             listViewItem3.StateImageIndex = 0;
@@ -783,7 +785,7 @@ namespace Vela31_Ineo
             listViewItem69.StateImageIndex = 0;
             listViewItem70.StateImageIndex = 0;
             listViewItem71.StateImageIndex = 0;
-            this.model_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            model_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
             listViewItem3,
@@ -855,15 +857,15 @@ namespace Vela31_Ineo
             listViewItem69,
             listViewItem70,
             listViewItem71});
-            this.model_list.LabelWrap = false;
-            this.model_list.Location = new System.Drawing.Point(238, 12);
-            this.model_list.MultiSelect = false;
-            this.model_list.Name = "model_list";
-            this.model_list.Size = new System.Drawing.Size(219, 281);
-            this.model_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.model_list.TabIndex = 3;
-            this.model_list.UseCompatibleStateImageBehavior = false;
-            this.model_list.View = System.Windows.Forms.View.Details;
+            model_list.LabelWrap = false;
+            model_list.Location = new System.Drawing.Point(238, 12);
+            model_list.MultiSelect = false;
+            model_list.Name = "model_list";
+            model_list.Size = new System.Drawing.Size(219, 298);
+            model_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            model_list.TabIndex = 3;
+            model_list.UseCompatibleStateImageBehavior = false;
+            model_list.View = System.Windows.Forms.View.Details;
             // 
             // Model
             // 
@@ -890,12 +892,22 @@ namespace Vela31_Ineo
             this.check_smb1.Text = "Enable SMB 1.0";
             this.check_smb1.UseVisualStyleBackColor = true;
             // 
+            // check_setAsDefault
+            // 
+            check_setAsDefault.AutoSize = true;
+            check_setAsDefault.Location = new System.Drawing.Point(6, 167);
+            check_setAsDefault.Name = "check_setAsDefault";
+            check_setAsDefault.Size = new System.Drawing.Size(90, 17);
+            check_setAsDefault.TabIndex = 7;
+            check_setAsDefault.Text = "Set as default";
+            check_setAsDefault.UseVisualStyleBackColor = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 335);
-            this.Controls.Add(this.model_list);
+            this.ClientSize = new System.Drawing.Size(470, 359);
+            this.Controls.Add(model_list);
             this.Controls.Add(this.start_install_btn);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
@@ -1704,7 +1716,8 @@ namespace Vela31_Ineo
         public System.Windows.Forms.TextBox text_ip_address;
         public System.Windows.Forms.CheckBox check_smb_only;
         public System.Windows.Forms.CheckBox check_smb1;
-        public System.Windows.Forms.ListView model_list;
+        public static System.Windows.Forms.ListView model_list;
+        public static System.Windows.Forms.CheckBox check_setAsDefault;
     }
 }
 

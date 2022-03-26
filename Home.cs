@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace Vela31_Ineo
@@ -40,7 +39,7 @@ namespace Vela31_Ineo
                     if (radio_a3.Checked)
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters(Home.model_list);
+                        Home.AddColorPrinters(model_list);
                         Home.AddA3Printers();
 
                         foreach (ListViewItem item in model_list.Items)
@@ -50,10 +49,11 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else if (radio_a4.Checked)
+                    }
+                    else if (radio_a4.Checked)
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters(Home.model_list);
+                        Home.AddColorPrinters(model_list);
                         Home.AddA4Printers();
 
                         foreach (ListViewItem item in model_list.Items)
@@ -63,10 +63,11 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         model_list.Items.Clear();
-                        Home.AddColorPrinters(Home.model_list);
+                        Home.AddColorPrinters(model_list);
                     }
                 }
                 else if (selection == radio_color_no)
@@ -87,7 +88,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else if (radio_a4.Checked)
+                    }
+                    else if (radio_a4.Checked)
                     {
                         model_list.Items.Clear();
                         Home.AddNonColorPrinters();
@@ -100,7 +102,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         model_list.Items.Clear();
                         Home.AddNonColorPrinters();
@@ -124,7 +127,7 @@ namespace Vela31_Ineo
                     {
                         model_list.Items.Clear();
                         Home.AddA3Printers();
-                        Home.AddColorPrinters(Home.model_list);
+                        Home.AddColorPrinters(model_list);
 
                         foreach (ListViewItem item in model_list.Items)
                         {
@@ -133,7 +136,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else if (radio_color_no.Checked)
+                    }
+                    else if (radio_color_no.Checked)
                     {
                         model_list.Items.Clear();
                         Home.AddA3Printers();
@@ -146,7 +150,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         model_list.Items.Clear();
                         Home.AddA3Printers();
@@ -161,7 +166,7 @@ namespace Vela31_Ineo
                     {
                         model_list.Items.Clear();
                         Home.AddA4Printers();
-                        Home.AddColorPrinters(Home.model_list);
+                        Home.AddColorPrinters(model_list);
 
                         foreach (ListViewItem item in model_list.Items)
                         {
@@ -170,7 +175,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else if (radio_color_no.Checked)
+                    }
+                    else if (radio_color_no.Checked)
                     {
                         model_list.Items.Clear();
                         Home.AddA4Printers();
@@ -183,7 +189,8 @@ namespace Vela31_Ineo
                                 model_list.Items.Remove(item);
                             }
                         }
-                    } else
+                    }
+                    else
                     {
                         model_list.Items.Clear();
                         Home.AddA4Printers();
@@ -194,14 +201,15 @@ namespace Vela31_Ineo
 
         private void Radio_mode_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton selection = (RadioButton) sender;
+            RadioButton selection = (RadioButton)sender;
 
             if (selection.Checked)
             {
                 if (selection == radio_recto_only)
                 {
                     MessageBox.Show("Impression recto par défaut");
-                } else if (selection == radio_recto_verso)
+                }
+                else if (selection == radio_recto_verso)
                 {
                     MessageBox.Show("Impression R/V par défaut");
                 }
@@ -210,14 +218,15 @@ namespace Vela31_Ineo
 
         private void Radio_default_color_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton selection = (RadioButton) sender;
+            RadioButton selection = (RadioButton)sender;
 
             if (selection.Checked)
             {
                 if (selection == radio_default_color)
                 {
                     MessageBox.Show("Impression en couleur par défaut");
-                } else if (selection == radio_default_black)
+                }
+                else if (selection == radio_default_black)
                 {
                     MessageBox.Show("Impression en N/B par défaut");
                 }

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Vela31-Ineo.exe" version="1.0.0.2" publicKeyToken="2e198fe38a8635f1" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Vela31-Ineo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Vela31-Ineo.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Options de manifeste UAC
+          Pour changer le niveau du contrôle de compte d'utilisateur Windows, remplacez le
+          nœud requestedExecutionLevel par l'une des propositions suivantes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Pour utiliser la virtualisation des fichiers et du Registre afin d'assurer
+         une compatibilité ascendante, supprimez le nœud requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vela31-Ineo.exe" size="42928">
+      <assemblyIdentity name="Vela31-Ineo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>AZqC2PoBtILfIIBJg4m0+6jPZl9j9Jgsf6XtWMp6Gbc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Vela31-Ineo.exe.config" size="232">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0a2WumEwVqDu5PNj3rr2emKXUaSA6X+soiXYdvApNYA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ISH0CK\iSh0ck" issuerKeyHash="39d1f57820a2d212f2930d542d66ed0fb5c7d651" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>5QUe+QHCN6ZGu9/B8STTZ4s80SYnoBsW0qkGRHvHePc=</DigestValue></Reference></SignedInfo><SignatureValue>ZP1AkMKFje428al6+sFn11WOMFBYKIIOOi2ltZJDFyoGAa6RXkFRNgZbHKEABG5/IgrOQ8lEpKKpj1jfNa9E+GdVU5WTHGtmQ/33Ea2JeWnowqkf/2lL9W7hEs43f+LhKhrFis7uDDCqqlSnLibWaEDyAzWKzvYqO0w499/gcZo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qmTdb8eB1e+2C9krSqNEqEpFexL/JGw7W8l871V2whLLVAr08iPlm/jq8fniTznX/S0wstr4yr00nonYrolQNi8HQqEeQUxZQLRLIG1a+sFU2+6l6ZtT9zseJyjZSabSvBdvbtOnCNjeH9yPoz2RjBLRBFz6yzEAOflCS6NNY7E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f778c77b4406a9d2161ba02726d13c8b67d324f1c1dfbb46a637c201f91e05e5" Description="" Url=""><as:assemblyIdentity name="Vela31-Ineo.exe" version="1.0.0.2" publicKeyToken="2e198fe38a8635f1" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ISH0CK\iSh0ck</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>7MqW2QOhdfIAbN3xPCtOTadTxthoPByge712IlAB7TM=</DigestValue></Reference></SignedInfo><SignatureValue>Do9cJRrJpNhelETwcRR/81AGbsF8Ncvcg/kkhuLx4mCxOUbWbNwlB9I6ihUmLpSiDtrNqfb2Xg/a11DFczU9YPUXewfIfveAXFedGVBrPPlRcyfkg5ilIEw15c7ct5BBzGNVYZaOFhfsKMZ6dkfM+ldoiT9oPL8rknMWZmp6WLU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qmTdb8eB1e+2C9krSqNEqEpFexL/JGw7W8l871V2whLLVAr08iPlm/jq8fniTznX/S0wstr4yr00nonYrolQNi8HQqEeQUxZQLRLIG1a+sFU2+6l6ZtT9zseJyjZSabSvBdvbtOnCNjeH9yPoz2RjBLRBFz6yzEAOflCS6NNY7E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIBzTCCATagAwIBAgIQFkVszLoRg51E/pTo6XFowjANBgkqhkiG9w0BAQsFADAlMSMwIQYDVQQDHhoASQBTAEgAMABDAEsAXABpAFMAaAAwAGMAazAeFw0yMjAzMTgxODExNTFaFw0yMzAzMTkwMDExNTFaMCUxIzAhBgNVBAMeGgBJAFMASAAwAEMASwBcAGkAUwBoADAAYwBrMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqZN1vx4HV77YL2StKo0SoSkV7Ev8kbDtbyXzvVXbCEstUCvTyI+Wb+Orx+eJPOdf9LTCy2vjKvTSeidiuiVA2LwdCoR5BTFlAtEsgbVr6wVTb7qXpm1P3Ox4nKNlJptK8F29u06cI2N4f3I+jPZGMEtEEXPrLMQA5+UJLo01jsQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBACakWjZvUfJ0s/JB/mG59BWnyo/aevyK4Q0elGYfpFyG13Qf7ZMGYdqaUykh/XuF6WvCOBKogW3sU8VR5BYcL9TAZLSjEs0PE2u6hmK3wArDPk2saAQJuHoPH+W+C7eP7GS/HiJljzT5VkJeHROdioXRyulNf39yk/jYXPeJh0oM</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

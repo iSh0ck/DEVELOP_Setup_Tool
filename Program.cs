@@ -1,22 +1,22 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO.Compression;
-using System.IO;
-using System.DirectoryServices;
-using System.Management;
 using System.Diagnostics;
-using System.Security.AccessControl;
-using System.Security.Principal;
-using IWshRuntimeLibrary;
+using System.DirectoryServices;
+using System.IO;
+using System.IO.Compression;
+using System.Management.Automation;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Management.Automation;
+using System.Windows.Forms;
 
 namespace Vela31_Ineo
 {
+    public static class PrinterClass
+    {
+        [DllImport("winspool.drv", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern bool SetDefaultPrinter(string Printer);
+    }
     static class Program
     {
         /// <summary>
@@ -110,7 +110,7 @@ namespace Vela31_Ineo
             String pathToInfFile = Directory.GetCurrentDirectory() + @"\Download";
 
             // Trouver le nom du fichier complet .inf
-            String [] files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\Download");
+            String[] files = Directory.GetFiles(Directory.GetCurrentDirectory() + @"\Download");
             String filename = "";
             foreach (String file in files)
             {
@@ -140,8 +140,8 @@ namespace Vela31_Ineo
             cmd.StandardInput.Flush();
 
             // Installation de l'imprimante
-            cmd.StandardInput.WriteLine("cscript prnmngr.vbs -a -p " + 
-                                        '"' + "Copieur " + model_name + '"' + " -m " + 
+            cmd.StandardInput.WriteLine("cscript prnmngr.vbs -a -p " +
+                                        '"' + "Copieur " + model_name + '"' + " -m " +
                                         '"' + GetDriverName(model_name) + '"' + " -r IP_" + ipaddr);
             cmd.StandardInput.Flush();
 
@@ -149,7 +149,16 @@ namespace Vela31_Ineo
             cmd.StandardInput.Close();
             cmd.WaitForExit();
 
+<<<<<<< Updated upstream
             Directory.Delete(Directory.GetCurrentDirectory() + @"\Download", delete);
+=======
+            if (Home.check_setAsDefault.Checked)
+            {
+                PrinterClass.SetDefaultPrinter("Copieur " + model_name);
+            }
+
+            Directory.Delete(Directory.GetCurrentDirectory() + @"\Download");
+>>>>>>> Stashed changes
         }
 
         /*
@@ -234,7 +243,7 @@ namespace Vela31_Ineo
                     .AddParameter("Online")
                     .AddParameter("FeatureName", "SMB1Protocol").Invoke();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Un redémarrage est nécessaire afin de terminer l'activation SMB 1.0");
             }
