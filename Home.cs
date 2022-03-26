@@ -266,6 +266,7 @@ namespace Vela31_Ineo
                 else
                 {
                     MessageBox.Show("Please select an SMB option");
+                    return;
                 }
             }
 
@@ -274,36 +275,44 @@ namespace Vela31_Ineo
             {
                 if (this.text_ip_address != null && this.text_ip_address.Text != "")
                 {
-                    if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
+                    if (this.combo_os != null && this.combo_os.SelectedItem != null)
                     {
-                        // Téléchargement du driver
-                        Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
-                        
-                        // Unzip du driver dans le répertoir Download
-                        Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
-                        
-                        // Installation du driver
-                        Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
-
-                        if (this.combo_smb.SelectedItem != null)
+                        if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
                         {
-                            // Paramétrage du SMB
-                            Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
+                            // Téléchargement du driver
+                            Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+
+                            // Unzip du driver dans le répertoir Download
+                            Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+
+                            // Installation du driver
+                            Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
+
+                            if (this.combo_smb.SelectedItem != null)
+                            {
+                                // Paramétrage du SMB
+                                Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please select an SMB option");
+                            }
+
+                            // Vérification si activation du SMB v1.0
+                            if (this.check_smb1.Checked)
+                            {
+                                Program.EnableSMB1();
+                            }
                         }
                         else
                         {
                             MessageBox.Show("Please select an SMB option");
-                        }
-
-                        // Vérification si activation du SMB v1.0
-                        if (this.check_smb1.Checked)
-                        {
-                            Program.EnableSMB1();
+                            return;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please select an SMB option");
+                        MessageBox.Show("Please select an OS");
                         return;
                     }
                 }
