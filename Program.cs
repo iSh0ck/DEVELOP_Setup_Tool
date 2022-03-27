@@ -218,10 +218,6 @@ namespace Vela31_Ineo
                     shortcut.TargetPath = @"C:\Scans";
                     shortcut.Description = "Dossier raccourcis Scans";
                     shortcut.Save();
-
-                    // Activation SMB v1.0
-                    PowerShell shell = PowerShell.Create();
-                    shell.AddCommand("Set-SmbServerConfiguration").AddParameter("EnableSMB1Protocol", "$true");
                 }
                 catch (Exception ex)
                 {

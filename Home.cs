@@ -275,7 +275,7 @@ namespace Vela31_Ineo
             {
                 if (this.text_ip_address != null && this.text_ip_address.Text != "")
                 {
-                    if (this.combo_os != null && this.combo_os.SelectedItem != null)
+                    if (this.combo_os != null && this.combo_os.SelectedItem != null && this.combo_os.SelectedItem.ToString() != "No")
                     {
                         if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
                         {

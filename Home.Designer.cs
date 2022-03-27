@@ -325,6 +325,8 @@ namespace Vela31_Ineo
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            check_setAsDefault = new System.Windows.Forms.CheckBox();
+            this.check_smb1 = new System.Windows.Forms.CheckBox();
             this.check_smb_only = new System.Windows.Forms.CheckBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -349,8 +351,6 @@ namespace Vela31_Ineo
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Color = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Format = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.check_smb1 = new System.Windows.Forms.CheckBox();
-            check_setAsDefault = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -495,6 +495,26 @@ namespace Vela31_Ineo
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(210, 189);
             this.panel4.TabIndex = 2;
+            // 
+            // check_setAsDefault
+            // 
+            check_setAsDefault.AutoSize = true;
+            check_setAsDefault.Location = new System.Drawing.Point(6, 167);
+            check_setAsDefault.Name = "check_setAsDefault";
+            check_setAsDefault.Size = new System.Drawing.Size(90, 17);
+            check_setAsDefault.TabIndex = 7;
+            check_setAsDefault.Text = "Set as default";
+            check_setAsDefault.UseVisualStyleBackColor = true;
+            // 
+            // check_smb1
+            // 
+            this.check_smb1.AutoSize = true;
+            this.check_smb1.Location = new System.Drawing.Point(85, 146);
+            this.check_smb1.Name = "check_smb1";
+            this.check_smb1.Size = new System.Drawing.Size(102, 17);
+            this.check_smb1.TabIndex = 6;
+            this.check_smb1.Text = "Enable SMB 1.0";
+            this.check_smb1.UseVisualStyleBackColor = true;
             // 
             // check_smb_only
             // 
@@ -881,26 +901,6 @@ namespace Vela31_Ineo
             // 
             this.Format.Text = "Format";
             this.Format.Width = 68;
-            // 
-            // check_smb1
-            // 
-            this.check_smb1.AutoSize = true;
-            this.check_smb1.Location = new System.Drawing.Point(85, 146);
-            this.check_smb1.Name = "check_smb1";
-            this.check_smb1.Size = new System.Drawing.Size(102, 17);
-            this.check_smb1.TabIndex = 6;
-            this.check_smb1.Text = "Enable SMB 1.0";
-            this.check_smb1.UseVisualStyleBackColor = true;
-            // 
-            // check_setAsDefault
-            // 
-            check_setAsDefault.AutoSize = true;
-            check_setAsDefault.Location = new System.Drawing.Point(6, 167);
-            check_setAsDefault.Name = "check_setAsDefault";
-            check_setAsDefault.Size = new System.Drawing.Size(90, 17);
-            check_setAsDefault.TabIndex = 7;
-            check_setAsDefault.Text = "Set as default";
-            check_setAsDefault.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
