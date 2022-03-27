@@ -12,3 +12,5 @@ F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.csproj.Generate
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.csproj.CoreCompileInputs.cache
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.exe
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.pdb
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.TrustInfo.xml
+F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Release\Vela31-Ineo.exe.manifest
