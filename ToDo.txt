@@ -1,7 +1,7 @@
 ﻿ToDo:
 - Idées:
     > Paramétrage dans le pilote automatique (Voir comment ça fonctionne)
-    > Ajouter liste d'emails dans le copieur depuis un 
+    > Ajouter liste d'emails dans le copieur depuis un fichier
     > Possibilité de lancé une impression test directement à la fin de l'installation
 
 - A faire: 
