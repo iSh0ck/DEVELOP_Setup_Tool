@@ -5,6 +5,8 @@
     > Possibilité de lancé une impression test directement à la fin de l'installation
 
 - A faire: 
-    > Test fonctionnement pour copieur par défaut
+    > Test fonctionnement pour copieur par défaut -- Fonctionne pas
+    > Passage en réseau public
+        - Set-NetConnectionProfile -Name "vela.local" -NetworkCategory Private
     > Paramétrage du SMB:
         * Réccupération du hostname + ajout dans l'interface web
