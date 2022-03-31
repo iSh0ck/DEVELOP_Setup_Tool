@@ -50,7 +50,6 @@ namespace Vela31_Ineo
             {
                 Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\Download");
             }
-            String url = "http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip";
 
             using (WebClient client = new WebClient())
             {
