@@ -52,8 +52,6 @@ namespace Vela31_Ineo
             }
             String url = "http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip";
 
-            MessageBox.Show(url);
-
             using (WebClient client = new WebClient())
             {
                 // Mettre à jour la progressbar
@@ -84,8 +82,7 @@ namespace Vela31_Ineo
 
         /*
          * 
-         * --------------------- A TEST ---------------------
-         *         VERIFIER AVANT AVEC DES MESSAGES BOX
+         * --------------------- TERMINER ---------------------
          *         
          */
         public static void InstallDriver(String model_name, String ipaddr, String default_mode, String default_print)
@@ -225,6 +222,7 @@ namespace Vela31_Ineo
                 }
             }
         }
+        
         public static void EnableSMB1()
         {
             try
