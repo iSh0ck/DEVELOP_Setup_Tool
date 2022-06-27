@@ -273,7 +273,7 @@ namespace Vela31_Ineo
             // Vérification du formulaire
             if (model_list.SelectedItems.Count == 1)
             {
-                if (this.text_ip_address != null && this.text_ip_address.Text != "")
+                if (this.text_ip_address != null && this.text_ip_address.Text != "" && this.text_ip_address.Text != "Printer IP Address")
                 {
                     if (this.combo_os != null && this.combo_os.SelectedItem != null && this.combo_os.SelectedItem.ToString() != "No")
                     {
