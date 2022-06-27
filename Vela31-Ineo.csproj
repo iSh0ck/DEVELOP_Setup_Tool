@@ -86,7 +86,7 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Vela31_Ineo.Scrapping</StartupObject>
+    <StartupObject>Vela31_Ineo.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>

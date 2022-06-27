@@ -261,6 +261,7 @@ namespace Vela31_Ineo
             drivers.Add("Ineo+ 224", "Generic Universal PCL");
             drivers.Add("Ineo+ 224e", "Generic Universal PCL");
             drivers.Add("Ineo+ 250", "Generic Universal PCL");
+            drivers.Add("Ineo+ 257i", "Generic Universal PCL");
             drivers.Add("Ineo+ 284", "Generic Universal PCL");
             drivers.Add("Ineo+ 284e", "Generic Universal PCL");
             drivers.Add("Ineo+ 364", "Generic Universal PCL");
