@@ -1,8 +1,5 @@
 ﻿ToDo:
-- Idées:
-    > Paramétrage dans le pilote automatique (Voir comment ça fonctionne)
-    > Ajouter liste d'emails dans le copieur depuis un fichier
-
 - A faire:
     > Paramétrage du SMB:
-        * Réccupération du hostname + ajout dans l'interface web
+        * Réccupération du hostname + ajout dans l'interface web pour copieurs récents
+		* Sinon ouverture création d'un document texte avec infos scan
