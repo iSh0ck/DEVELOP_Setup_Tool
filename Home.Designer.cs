@@ -166,150 +166,154 @@ namespace Vela31_Ineo
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 258",
+            "Ineo+ 257i",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 284",
+            "Ineo+ 258",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 284e",
+            "Ineo+ 284",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 287",
+            "Ineo+ 284e",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 300i",
+            "Ineo+ 287",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Ineo+ 308",
+            "Ineo+ 300i",
             "Yes",
             "A3"}, -1);
             System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem(new string[] {
+            "Ineo+ 308",
+            "Yes",
+            "A3"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3110",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3300i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3320i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3350",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3350i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 360i",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 364",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 364e",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 368",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3850",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 3851",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4000i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem53 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 4050i",
             "Yes",
             "A4"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem54 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 450i",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem55 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 451",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem56 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 452",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem57 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 454",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem58 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 454e",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem59 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 458",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem60 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 550i",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem61 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 554",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem62 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 554e",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem63 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 558",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem64 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 650i",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem65 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 654",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem66 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 654e",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem67 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 658",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem68 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 659",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem69 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 754",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem70 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 754e",
             "Yes",
             "A3"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem71 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem72 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo+ 759",
             "Yes",
             "A3"}, -1);
@@ -482,7 +486,7 @@ namespace Vela31_Ineo
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(check_setAsDefault);
+            panel4.Controls.Add(check_setAsDefault);
             this.panel4.Controls.Add(this.check_smb1);
             this.panel4.Controls.Add(this.check_smb_only);
             this.panel4.Controls.Add(this.panel9);
@@ -768,7 +772,6 @@ namespace Vela31_Ineo
             listViewItem32.StateImageIndex = 0;
             listViewItem33.StateImageIndex = 0;
             listViewItem34.StateImageIndex = 0;
-            listViewItem35.StateImageIndex = 0;
             listViewItem36.StateImageIndex = 0;
             listViewItem37.StateImageIndex = 0;
             listViewItem38.StateImageIndex = 0;
@@ -805,6 +808,7 @@ namespace Vela31_Ineo
             listViewItem69.StateImageIndex = 0;
             listViewItem70.StateImageIndex = 0;
             listViewItem71.StateImageIndex = 0;
+            listViewItem72.StateImageIndex = 0;
             model_list.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
@@ -876,7 +880,8 @@ namespace Vela31_Ineo
             listViewItem68,
             listViewItem69,
             listViewItem70,
-            listViewItem71});
+            listViewItem71,
+            listViewItem72});
             model_list.LabelWrap = false;
             model_list.Location = new System.Drawing.Point(238, 12);
             model_list.MultiSelect = false;
