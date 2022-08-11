@@ -318,16 +318,6 @@ namespace Vela31_Ineo
             "Yes",
             "A3"}, -1);
             this.text_model_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radio_a3 = new System.Windows.Forms.RadioButton();
-            this.radio_a4 = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.radio_color_no = new System.Windows.Forms.RadioButton();
-            this.radio_color_yes = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             check_setAsDefault = new System.Windows.Forms.CheckBox();
             this.check_smb1 = new System.Windows.Forms.CheckBox();
@@ -346,24 +336,17 @@ namespace Vela31_Ineo
             this.radio_recto_verso = new System.Windows.Forms.RadioButton();
             this.radio_recto_only = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.combo_os = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.start_install_btn = new System.Windows.Forms.Button();
             model_list = new System.Windows.Forms.ListView();
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Color = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Format = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // text_model_search
@@ -376,134 +359,26 @@ namespace Vela31_Ineo
             this.text_model_search.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Model_search_MouseClick);
             this.text_model_search.TextChanged += new System.EventHandler(this.Text_model_search_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search options";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-3, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Format";
-            // 
-            // radio_a3
-            // 
-            this.radio_a3.AutoSize = true;
-            this.radio_a3.Location = new System.Drawing.Point(42, -1);
-            this.radio_a3.Name = "radio_a3";
-            this.radio_a3.Size = new System.Drawing.Size(38, 17);
-            this.radio_a3.TabIndex = 1;
-            this.radio_a3.TabStop = true;
-            this.radio_a3.Text = "A3";
-            this.radio_a3.UseVisualStyleBackColor = true;
-            this.radio_a3.CheckedChanged += new System.EventHandler(this.Radio_format_CheckedChanged);
-            // 
-            // radio_a4
-            // 
-            this.radio_a4.AutoSize = true;
-            this.radio_a4.Location = new System.Drawing.Point(86, -1);
-            this.radio_a4.Name = "radio_a4";
-            this.radio_a4.Size = new System.Drawing.Size(38, 17);
-            this.radio_a4.TabIndex = 2;
-            this.radio_a4.TabStop = true;
-            this.radio_a4.Text = "A4";
-            this.radio_a4.UseVisualStyleBackColor = true;
-            this.radio_a4.CheckedChanged += new System.EventHandler(this.Radio_format_CheckedChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 38);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 77);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.radio_color_no);
-            this.panel3.Controls.Add(this.radio_color_yes);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(7, 20);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(164, 19);
-            this.panel3.TabIndex = 1;
-            // 
-            // radio_color_no
-            // 
-            this.radio_color_no.AutoSize = true;
-            this.radio_color_no.Location = new System.Drawing.Point(86, -1);
-            this.radio_color_no.Name = "radio_color_no";
-            this.radio_color_no.Size = new System.Drawing.Size(39, 17);
-            this.radio_color_no.TabIndex = 2;
-            this.radio_color_no.TabStop = true;
-            this.radio_color_no.Text = "No";
-            this.radio_color_no.UseVisualStyleBackColor = true;
-            this.radio_color_no.CheckedChanged += new System.EventHandler(this.Radio_color_CheckedChanged);
-            // 
-            // radio_color_yes
-            // 
-            this.radio_color_yes.AutoSize = true;
-            this.radio_color_yes.Location = new System.Drawing.Point(42, -1);
-            this.radio_color_yes.Name = "radio_color_yes";
-            this.radio_color_yes.Size = new System.Drawing.Size(43, 17);
-            this.radio_color_yes.TabIndex = 1;
-            this.radio_color_yes.TabStop = true;
-            this.radio_color_yes.Text = "Yes";
-            this.radio_color_yes.UseVisualStyleBackColor = true;
-            this.radio_color_yes.CheckedChanged += new System.EventHandler(this.Radio_color_CheckedChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(-3, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Color";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.radio_a4);
-            this.panel2.Controls.Add(this.radio_a3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(6, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 24);
-            this.panel2.TabIndex = 2;
-            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            panel4.Controls.Add(check_setAsDefault);
+            this.panel4.Controls.Add(check_setAsDefault);
             this.panel4.Controls.Add(this.check_smb1);
             this.panel4.Controls.Add(this.check_smb_only);
             this.panel4.Controls.Add(this.panel9);
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(12, 121);
+            this.panel4.Location = new System.Drawing.Point(12, 41);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 189);
+            this.panel4.Size = new System.Drawing.Size(210, 168);
             this.panel4.TabIndex = 2;
             // 
             // check_setAsDefault
             // 
             check_setAsDefault.AutoSize = true;
-            check_setAsDefault.Location = new System.Drawing.Point(6, 167);
+            check_setAsDefault.Location = new System.Drawing.Point(7, 143);
             check_setAsDefault.Name = "check_setAsDefault";
             check_setAsDefault.Size = new System.Drawing.Size(90, 17);
             check_setAsDefault.TabIndex = 7;
@@ -513,17 +388,18 @@ namespace Vela31_Ineo
             // check_smb1
             // 
             this.check_smb1.AutoSize = true;
-            this.check_smb1.Location = new System.Drawing.Point(85, 146);
+            this.check_smb1.Location = new System.Drawing.Point(85, 122);
             this.check_smb1.Name = "check_smb1";
             this.check_smb1.Size = new System.Drawing.Size(102, 17);
             this.check_smb1.TabIndex = 6;
             this.check_smb1.Text = "Enable SMB 1.0";
             this.check_smb1.UseVisualStyleBackColor = true;
+            this.check_smb1.CheckedChanged += new System.EventHandler(this.check_smb1_CheckedChanged);
             // 
             // check_smb_only
             // 
             this.check_smb_only.AutoSize = true;
-            this.check_smb_only.Location = new System.Drawing.Point(7, 146);
+            this.check_smb_only.Location = new System.Drawing.Point(7, 122);
             this.check_smb_only.Name = "check_smb_only";
             this.check_smb_only.Size = new System.Drawing.Size(72, 17);
             this.check_smb_only.TabIndex = 5;
@@ -562,7 +438,7 @@ namespace Vela31_Ineo
             // 
             this.panel8.Controls.Add(this.combo_smb);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(6, 119);
+            this.panel8.Location = new System.Drawing.Point(6, 96);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(187, 24);
             this.panel8.TabIndex = 5;
@@ -595,7 +471,7 @@ namespace Vela31_Ineo
             this.panel7.Controls.Add(this.radio_default_black);
             this.panel7.Controls.Add(this.radio_default_color);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(6, 94);
+            this.panel7.Location = new System.Drawing.Point(6, 71);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(187, 24);
             this.panel7.TabIndex = 4;
@@ -638,7 +514,7 @@ namespace Vela31_Ineo
             this.panel6.Controls.Add(this.radio_recto_verso);
             this.panel6.Controls.Add(this.radio_recto_only);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(6, 70);
+            this.panel6.Location = new System.Drawing.Point(6, 47);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(202, 24);
             this.panel6.TabIndex = 3;
@@ -677,37 +553,6 @@ namespace Vela31_Ineo
             this.label6.TabIndex = 0;
             this.label6.Text = "Mode";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.combo_os);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(6, 46);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(187, 24);
-            this.panel5.TabIndex = 2;
-            this.panel5.TabStop = true;
-            // 
-            // combo_os
-            // 
-            this.combo_os.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_os.Items.AddRange(new object[] {
-            "Windows 10",
-            "Windows 11",
-            "Windows 7"});
-            this.combo_os.Location = new System.Drawing.Point(33, 1);
-            this.combo_os.Name = "combo_os";
-            this.combo_os.Size = new System.Drawing.Size(121, 21);
-            this.combo_os.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "OS";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -721,7 +566,7 @@ namespace Vela31_Ineo
             // start_install_btn
             // 
             this.start_install_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_install_btn.Location = new System.Drawing.Point(178, 316);
+            this.start_install_btn.Location = new System.Drawing.Point(178, 218);
             this.start_install_btn.Name = "start_install_btn";
             this.start_install_btn.Size = new System.Drawing.Size(110, 31);
             this.start_install_btn.TabIndex = 4;
@@ -886,7 +731,7 @@ namespace Vela31_Ineo
             model_list.Location = new System.Drawing.Point(238, 12);
             model_list.MultiSelect = false;
             model_list.Name = "model_list";
-            model_list.Size = new System.Drawing.Size(219, 298);
+            model_list.Size = new System.Drawing.Size(230, 197);
             model_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
             model_list.TabIndex = 3;
             model_list.UseCompatibleStateImageBehavior = false;
@@ -895,39 +740,32 @@ namespace Vela31_Ineo
             // Model
             // 
             this.Model.Text = "Model";
-            this.Model.Width = 84;
+            this.Model.Width = 78;
             // 
             // Color
             // 
             this.Color.Text = "Color";
-            this.Color.Width = 67;
+            this.Color.Width = 62;
             // 
             // Format
             // 
             this.Format.Text = "Format";
-            this.Format.Width = 68;
+            this.Format.Width = 64;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 359);
+            this.ClientSize = new System.Drawing.Size(480, 252);
             this.Controls.Add(model_list);
             this.Controls.Add(this.start_install_btn);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.text_model_search);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "Home";
             this.Text = "Vela31 - Home";
             this.Load += new System.EventHandler(this.Home_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -938,8 +776,6 @@ namespace Vela31_Ineo
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1686,20 +1522,8 @@ namespace Vela31_Ineo
         #endregion
 
         private System.Windows.Forms.TextBox text_model_search;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radio_a3;
-        private System.Windows.Forms.RadioButton radio_a4;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton radio_color_no;
-        private System.Windows.Forms.RadioButton radio_color_yes;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.RadioButton radio_recto_verso;
         private System.Windows.Forms.RadioButton radio_recto_only;
@@ -1716,7 +1540,6 @@ namespace Vela31_Ineo
         private System.Windows.Forms.ColumnHeader Model;
         private System.Windows.Forms.ColumnHeader Color;
         private System.Windows.Forms.ColumnHeader Format;
-        public System.Windows.Forms.ComboBox combo_os;
         public System.Windows.Forms.ComboBox combo_smb;
         public System.Windows.Forms.TextBox text_ip_address;
         public System.Windows.Forms.CheckBox check_smb_only;

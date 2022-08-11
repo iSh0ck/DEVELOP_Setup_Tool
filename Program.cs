@@ -5,10 +5,13 @@ using System.Diagnostics;
 using System.DirectoryServices;
 using System.IO;
 using System.IO.Compression;
+using System.Security.AccessControl;
 using System.Management.Automation;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Management;
+using System.Security.Principal;
 
 namespace Vela31_Ineo
 {
@@ -198,7 +201,8 @@ namespace Vela31_Ineo
                     cmd.StartInfo.UseShellExecute = false;
                     cmd.Start();
 
-                    cmd.StandardInput.WriteLine(@"net share Scans=C:\Scans");
+                    // Vérifier si fonctionne sur un domaine
+                    cmd.StandardInput.WriteLine(@"net share Scans=C:\Scans /grant:scan,full");
                     cmd.StandardInput.Flush();
 
                     // Ajouter les permissions sur le dossier à l'utilisateur scan

@@ -26,7 +26,9 @@ namespace Vela31_Ineo
             text_ip_address.SelectAll();
         }
 
-        private void Radio_color_CheckedChanged(object sender, EventArgs e)
+        /* Modification de la liste via des radio buttons
+         * 
+         * private void Radio_color_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton selection = (RadioButton)sender;
 
@@ -198,7 +200,7 @@ namespace Vela31_Ineo
                     }
                 }
             }
-        }
+        }*/
 
         private void Radio_mode_CheckedChanged(object sender, EventArgs e)
         {
@@ -275,12 +277,10 @@ namespace Vela31_Ineo
             {
                 if (this.text_ip_address != null && this.text_ip_address.Text != "" && this.text_ip_address.Text != "Printer IP Address")
                 {
-                    if (this.combo_os != null && this.combo_os.SelectedItem != null && this.combo_os.SelectedItem.ToString() != "No")
-                    {
                         if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
                         {
                             // Téléchargement du driver
-                            Program.DownloadDriver(combo_os.Text, model_list.SelectedItems[0].Text);
+                            Program.DownloadDriver("Windows 10", model_list.SelectedItems[0].Text);
 
                             // Unzip du driver dans le répertoir Download
                             Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
@@ -309,12 +309,6 @@ namespace Vela31_Ineo
                             MessageBox.Show("Please select an SMB option");
                             return;
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please select an OS");
-                        return;
-                    }
                 }
                 else
                 {
@@ -328,5 +322,16 @@ namespace Vela31_Ineo
                 return;
             }
         }
+
+        private void check_smb1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.check_smb1.Checked)
+            {
+                    MessageBox.Show("Please select this option if you want to use SMBv1.\n" +
+                                    "- By activating this option the installation will take more time.\n" +
+                                    "- At the end of the installation you may have to restart the computer\n" +
+                                    "- You should only use this option on the older printer ranges");
+            }
+        }        
     }
 }
