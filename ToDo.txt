@@ -2,7 +2,7 @@
 - A faire:
     > Case "Auto-Fill"
 	    * Vérification avec fonction "Auto-Fill_Check" (Vérif si le copieur est bien une gamme i)
-		* Vérification au bouton start et décoche l'option si besoin puis renvois au 2ème point du ""Paramétrage SMB"
+		* Vérification au bouton start et décoche l'option si besoin puis renvois au 2ème point du "Paramétrage SMB"
     > Paramétrage du SMB:
         * Réccupération du hostname + ajout dans l'interface web pour copieurs récents
 		* Sinon ouverture création d'un document texte avec infos scan

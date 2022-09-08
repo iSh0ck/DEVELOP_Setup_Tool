@@ -200,7 +200,7 @@ namespace Vela31_Ineo
                     }
                 }
             }
-        }*/
+        }
 
         private void Radio_mode_CheckedChanged(object sender, EventArgs e)
         {
@@ -234,7 +234,7 @@ namespace Vela31_Ineo
                     MessageBox.Show("Impression en N/B par défaut");
                 }
             }
-        }
+        }*/
 
         private void Text_model_search_TextChanged(object sender, EventArgs e)
         {

@@ -281,6 +281,9 @@ namespace Vela31_Ineo
             drivers.Add("Ineo+ 654e", "Generic Universal PCL");
             drivers.Add("Ineo+ 754", "Generic Universal PCL");
             drivers.Add("Ineo+ 754e", "Generic Universal PCL");
+            drivers.Add("Ineo 458e", "Generic Universal PCL");
+            drivers.Add("Ineo 558e", "Generic Universal PCL");
+            drivers.Add("Ineo 308e", "Generic Universal PCL");
 
             // Adding Generic 65C-0iSeriesPCL printers to the list
             drivers.Add("Ineo+ 450i", "Generic 65C-0iSeriesPCL");
@@ -336,13 +339,10 @@ namespace Vela31_Ineo
 
             // Adding Generic 55BW-9SeriesPCL printers to the list
             drivers.Add("Ineo 458", "Generic 55BW-9SeriesPCL");
-            drivers.Add("Ineo 458e", "Generic 55BW-9SeriesPCL");
             drivers.Add("Ineo 558", "Generic 55BW-9SeriesPCL");
-            drivers.Add("Ineo 558e", "Generic 55BW-9SeriesPCL");
 
             // Adding Generic 36BW-9SeriesPCL printers to the list
             drivers.Add("Ineo 308", "Generic 36BW-9SeriesPCL");
-            drivers.Add("Ineo 308e", "Generic 36BW-9SeriesPCL");
             drivers.Add("Ineo 368", "Generic 36BW-9SeriesPCL");
 
             // Adding Generic 36BW-8SeriesPCL printers to the list
