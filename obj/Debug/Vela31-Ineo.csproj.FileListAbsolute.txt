@@ -52,3 +52,36 @@ F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.CoreCompil
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.csproj.CopyComplete
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.exe
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\obj\Debug\Vela31-Ineo.pdb
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\Vela31-Ineo.exe.config
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\Vela31-Ineo.exe
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\Vela31-Ineo.pdb
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\AngleSharp.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Buffers.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Security.AccessControl.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\WebDriver.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\AngleSharp.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\ICSharpCode.SharpZipLib.pdb
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\ICSharpCode.SharpZipLib.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Buffers.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Security.AccessControl.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.AssemblyReference.cache
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.SuggestedBindingRedirects.cache
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Interop.IWshRuntimeLibrary.dll
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.ResolveComReference.cache
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31_Ineo.Home.resources
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31_Ineo.Debug.resources
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31_Ineo.Properties.Resources.resources
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.GenerateResource.cache
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.CoreCompileInputs.cache
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.csproj.CopyComplete
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.exe
+C:\Users\utilisateur temp\Documents\GitHub\Vela31---Ineo\obj\Debug\Vela31-Ineo.pdb
