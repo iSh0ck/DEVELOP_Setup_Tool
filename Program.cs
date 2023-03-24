@@ -46,7 +46,7 @@ namespace Vela31_Ineo
         {
             // Téléchargement du driver depuis internet
             // Adresse du serveur de téléchargement
-            String server = "163.172.89.133";
+            String server = "shkhome.ddns.net:8080";
 
             // Création du dossier téléchargement
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\Download"))

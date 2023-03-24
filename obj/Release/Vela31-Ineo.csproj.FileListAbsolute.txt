@@ -21,7 +21,6 @@ F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\System.Security.AccessContr
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\System.Security.Principal.Windows.dll
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\System.Text.Encoding.CodePages.dll
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\WebDriver.dll
-F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\WebDriverManager.dll
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\AngleSharp.xml
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\ICSharpCode.SharpZipLib.pdb
 F:\Documents\GitHub\iSh0ck\Vela31 - Ineo\bin\Release\ICSharpCode.SharpZipLib.xml
