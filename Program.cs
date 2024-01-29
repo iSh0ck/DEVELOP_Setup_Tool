@@ -46,7 +46,7 @@ namespace Vela31_Ineo
         {
             // Téléchargement du driver depuis internet
             // Adresse du serveur de téléchargement
-            String server = "shkhome.ddns.net:8080";
+            String server = "drivers.shkdev.fr";
 
             // Création du dossier téléchargement
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\Download"))
@@ -59,7 +59,7 @@ namespace Vela31_Ineo
                 // Mettre à jour la progressbar
                 // client.DownloadProgressChanged += client_DownloadProgressChanged;
                 client.DownloadFile(
-                    new System.Uri("http://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip"),
+                    new System.Uri("https://" + server + "/Drivers Develop/" + os + "/" + model_name + "/PCL6/driver.zip"),
                     Directory.GetCurrentDirectory() + @"\Download\driver.zip");
             }
         }
