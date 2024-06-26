@@ -46,7 +46,7 @@ namespace Vela31_Ineo
         {
             // Téléchargement du driver depuis internet
             // Adresse du serveur de téléchargement
-            String server = "drivers.shkdev.fr";
+            String server = "drivers.domaine_name.fr";
 
             // Création du dossier téléchargement
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\Download"))
