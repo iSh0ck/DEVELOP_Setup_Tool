@@ -323,6 +323,7 @@ namespace Vela31_Ineo
             "A3"}, -1);
             this.text_model_search = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            chk_sendToPrinter = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             txt_contactName = new System.Windows.Forms.TextBox();
@@ -343,7 +344,6 @@ namespace Vela31_Ineo
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Color = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Format = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            chk_sendToPrinter = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -377,6 +377,17 @@ namespace Vela31_Ineo
             this.panel4.Size = new System.Drawing.Size(210, 164);
             this.panel4.TabIndex = 2;
             // 
+            // chk_sendToPrinter
+            // 
+            chk_sendToPrinter.AutoSize = true;
+            chk_sendToPrinter.Location = new System.Drawing.Point(6, 141);
+            chk_sendToPrinter.Name = "chk_sendToPrinter";
+            chk_sendToPrinter.Size = new System.Drawing.Size(115, 17);
+            chk_sendToPrinter.TabIndex = 13;
+            chk_sendToPrinter.Text = "Add SMB to printer";
+            chk_sendToPrinter.UseVisualStyleBackColor = true;
+            chk_sendToPrinter.CheckedChanged += new System.EventHandler(chk_sendToPrinter_CheckedChanged);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -403,7 +414,7 @@ namespace Vela31_Ineo
             txt_contactName.Size = new System.Drawing.Size(100, 20);
             txt_contactName.TabIndex = 10;
             txt_contactName.Text = "Contact name";
-            txt_contactName.Click += new System.EventHandler(this.txt_contactName_Click);
+            txt_contactName.Click += new System.EventHandler(txt_contactName_Click);
             // 
             // panel1
             // 
@@ -715,16 +726,6 @@ namespace Vela31_Ineo
             this.Format.Text = "Format";
             this.Format.Width = 64;
             // 
-            // chk_sendToPrinter
-            // 
-            chk_sendToPrinter.AutoSize = true;
-            chk_sendToPrinter.Location = new System.Drawing.Point(6, 141);
-            chk_sendToPrinter.Name = "chk_sendToPrinter";
-            chk_sendToPrinter.Size = new System.Drawing.Size(115, 17);
-            chk_sendToPrinter.TabIndex = 13;
-            chk_sendToPrinter.Text = "Add SMB to printer";
-            chk_sendToPrinter.UseVisualStyleBackColor = true;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,6 +779,6 @@ namespace Vela31_Ineo
         public static System.Windows.Forms.CheckBox chk_sendToPrinter;
         public static System.Windows.Forms.TextBox text_ip_address;
         public static System.Windows.Forms.TextBox txt_contactName;
-        public static  System.Windows.Forms.CheckBox check_setAsDefault;
+        public static System.Windows.Forms.CheckBox check_setAsDefault;
     }
 }

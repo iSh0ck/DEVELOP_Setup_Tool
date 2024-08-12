@@ -353,11 +353,24 @@ namespace Vela31_Ineo
                     /*txt_adminPass.Enabled = false;*/
                     txt_contactName.Enabled = false;
                     chk_sendToPrinter.Enabled = false;
+                    chk_sendToPrinter.Checked = false;
                     break;
                 case 1:
-                    /*txt_adminPass.Enabled = true;*/
-                    txt_contactName.Enabled = true;
                     chk_sendToPrinter.Enabled = true;
+                    break;
+            }
+        }
+
+        private void chk_sendToPrinter_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (chk_sendToPrinter.Checked)
+            {
+                case false:
+                    /*txt_adminPass.Enabled = false;*/
+                    txt_contactName.Enabled = false;
+                    break;
+                case true:
+                    txt_contactName.Enabled = true;
                     break;
             }
         }
