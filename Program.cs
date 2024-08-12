@@ -5,13 +5,10 @@ using System.Diagnostics;
 using System.DirectoryServices;
 using System.IO;
 using System.IO.Compression;
-using System.Security.AccessControl;
-using System.Management.Automation;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Management;
-using System.Security.Principal;
+using static Vela31_Ineo.Develop_Library;
 
 namespace Vela31_Ineo
 {
@@ -162,9 +159,16 @@ namespace Vela31_Ineo
          * --------------------- A FAIRE ---------------------
          * 
          */
-        public static void SetupPrinterInWebPanel(String ipaddr)
+        public static async void SetupSMBInWebPanel(string ipaddr, string contactName, string hostname)
         {
-            // Paramétrage depuis l'interface web (Utiliser Selenium)
+            // Connexion au copieur + Récuppération du token
+            string token = await Login_As_Public(ipaddr);
+
+            // Envoi des infos SMB vers le copieur
+            await Add_Smb_Contact(ipaddr, token, contactName, hostname, "Scans", "scan", "Sc@nner31");
+
+            // Déconnexion
+            await Logout(ipaddr);
         }
 
         /*
@@ -172,17 +176,17 @@ namespace Vela31_Ineo
          * --------------------- A TERMINER ---------------------
          * 
          */
-        public static void SetupSMB(String agence)
+        public static void SetupSMB(String smbValue)
         {
             // Vérification si on doit setup ou non le SMB
-            if (agence == "31" || agence == "09" || agence == "65")
+            if (smbValue == "Yes")
             {
                 try
                 {
                     // Création de l'utilisateur
                     DirectoryEntry ad = new DirectoryEntry("WinNT://" + Environment.MachineName + ",computer");
                     DirectoryEntry newUser = ad.Children.Add("Scan", "user");
-                    newUser.Invoke("SetPassword", new object[] { "Sc@nner" + agence });
+                    newUser.Invoke("SetPassword", new object[] { "Sc@nner31" });
                     newUser.Invoke("Put", new object[] { "Description", "Scan user for Vela printers" });
                     newUser.CommitChanges();
 
@@ -219,6 +223,18 @@ namespace Vela31_Ineo
                     shortcut.TargetPath = @"C:\Scans";
                     shortcut.Description = "Dossier raccourcis Scans";
                     shortcut.Save();
+
+                    if (Home.chk_sendToPrinter.Checked == true)
+                    {
+                        try
+                        {
+                            SetupSMBInWebPanel(Home.text_ip_address.Text, Home.txt_contactName.Text, Environment.MachineName);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("SMB (WebPanel): " + ex.Message);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -226,8 +242,8 @@ namespace Vela31_Ineo
                 }
             }
         }
-        
-        public static void EnableSMB1()
+
+        /*public static void EnableSMB1()
         {
             try
             {
@@ -240,7 +256,7 @@ namespace Vela31_Ineo
             {
                 MessageBox.Show("Un redémarrage est nécessaire afin de terminer l'activation SMB 1.0");
             }
-        }
+        }*/
 
         public static string GetDriverName(string model_name)
         {

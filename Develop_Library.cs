@@ -1,11 +1,12 @@
-﻿using System;
+﻿using AngleSharp.Dom;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Vela31_Ineo
 {
@@ -16,7 +17,9 @@ namespace Vela31_Ineo
         // Le constructeur de l'objet Session devrait comprendre un string contenant le token et un objet de type Cookie contenant le hash du token.
 
         // La fonction doit retourner le token généré lors de la connexion.
-        public static async Task Login_As_Public(string ip)
+
+        // Prévoir la mise en place d'un mot de passe spécifié manuellement
+        public static async Task<string> Login_As_Public(string ip)
         {
             // URL BASE
             string url = "http://" + ip + "/wcd/ulogin.cgi";
@@ -45,8 +48,9 @@ namespace Vela31_Ineo
             var cookieContainer = new CookieContainer();
             var handler = new HttpClientHandler { CookieContainer = cookieContainer };
 
-            using (HttpClient client = new HttpClient(handler)) {
-                
+            using (HttpClient client = new HttpClient(handler))
+            {
+
                 // Envois de la requête POST
                 HttpResponseMessage response = await client.PostAsync(url, postData);
                 response.EnsureSuccessStatusCode();
@@ -65,7 +69,20 @@ namespace Vela31_Ineo
                 }
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseContent);
+
+                // Expression régulière pour extraire la valeur de h_token
+                string pattern = @"<input[^>]+id\s*=\s*""h_token""[^>]+value\s*=\s*""([^""]+)""";
+                Match match = Regex.Match(responseContent, pattern);
+
+                if (match.Success)
+                {
+                    string token = match.Groups[1].Value;
+                    return token;
+                }
+                else
+                {
+                    throw new Exception("La valeur de htoken n'a pas été trouvée.");
+                }
             }
 
         }
@@ -108,7 +125,7 @@ namespace Vela31_Ineo
 
             foreach (var cookie in cookies)
             {
-                var cookieParts = cookie.Value.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                var cookieParts = cookie.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 var cookieKeyValue = cookieParts[0].Split(new[] { '=' }, 2);
 
                 if (cookieKeyValue.Length == 2)
@@ -125,7 +142,6 @@ namespace Vela31_Ineo
                 response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseContent);
             }
 
         }
@@ -141,10 +157,10 @@ namespace Vela31_Ineo
 
             var cookies = File.ReadAllLines("cookies.txt");
 
-            foreach(var cookie in cookies)
+            foreach (var cookie in cookies)
             {
                 var cookieParts = cookie.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-                var cookieKeyValue = cookieParts[0].Split(new { '=' }, 2);
+                var cookieKeyValue = cookieParts[0].Split(new[] { '=' }, 2);
 
                 if (cookieKeyValue.Length == 2)
                 {
@@ -152,7 +168,7 @@ namespace Vela31_Ineo
                 }
             }
 
-            using(HttpClient client = new HttpClient(handler))
+            using (HttpClient client = new HttpClient(handler))
             {
                 var content = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
 
@@ -195,7 +211,6 @@ namespace Vela31_Ineo
                 response.EnsureSuccessStatusCode();
 
                 string responseContent = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseContent);
             }
         }
 

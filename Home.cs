@@ -9,6 +9,7 @@ namespace Vela31_Ineo
         public Home()
         {
             InitializeComponent();
+            combo_smb.SelectedIndex = 0;
         }
 
         private void Model_search_MouseClick(object sender, MouseEventArgs e)
@@ -258,11 +259,11 @@ namespace Vela31_Ineo
                     // Paramétrage du SMB
                     Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
 
-                    // Vérification si activation du SMB v1.0
+                    /*// Vérification si activation du SMB v1.0
                     if (this.check_smb1.Checked)
                     {
                         Program.EnableSMB1();
-                    }
+                    }*/
                     return;
                 }
                 else
@@ -275,40 +276,40 @@ namespace Vela31_Ineo
             // Vérification du formulaire
             if (model_list.SelectedItems.Count == 1)
             {
-                if (this.text_ip_address != null && this.text_ip_address.Text != "" && this.text_ip_address.Text != "Printer IP Address")
+                if (text_ip_address != null && text_ip_address.Text != "" && text_ip_address.Text != "Printer IP Address")
                 {
-                        if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
+                    if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
+                    {
+                        // Téléchargement du driver
+                        Program.DownloadDriver("Windows 10", model_list.SelectedItems[0].Text);
+
+                        // Unzip du driver dans le répertoir Download
+                        Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+
+                        // Installation du driver
+                        Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
+
+                        if (this.combo_smb.SelectedItem != null)
                         {
-                            // Téléchargement du driver
-                            Program.DownloadDriver("Windows 10", model_list.SelectedItems[0].Text);
-
-                            // Unzip du driver dans le répertoir Download
-                            Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
-
-                            // Installation du driver
-                            Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
-
-                            if (this.combo_smb.SelectedItem != null)
-                            {
-                                // Paramétrage du SMB
-                                Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
-                            }
-                            else
-                            {
-                                MessageBox.Show("Please select an SMB option");
-                            }
-
-                            // Vérification si activation du SMB v1.0
-                            if (this.check_smb1.Checked)
-                            {
-                                Program.EnableSMB1();
-                            }
+                            // Paramétrage du SMB
+                            Program.SetupSMB(this.combo_smb.SelectedItem.ToString());
                         }
                         else
                         {
                             MessageBox.Show("Please select an SMB option");
-                            return;
                         }
+
+                        /*// Vérification si activation du SMB v1.0
+                        if (this.check_smb1.Checked)
+                        {
+                            Program.EnableSMB1();
+                        }*/
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select an SMB option");
+                        return;
+                    }
                 }
                 else
                 {
@@ -325,13 +326,40 @@ namespace Vela31_Ineo
 
         private void check_smb1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.check_smb1.Checked)
+            /*if (this.check_smb1.Checked)
             {
                     MessageBox.Show("Please select this option if you want to use SMBv1.\n" +
                                     "- By activating this option the installation will take more time.\n" +
                                     "- At the end of the installation you may have to restart the computer\n" +
                                     "- You should only use this option on the older printer ranges");
+            }*/
+        }
+
+        private void txt_adminPass_Click(object sender, EventArgs e)
+        {
+            txt_adminPass.SelectAll();
+        }
+
+        private void txt_contactName_Click(object sender, EventArgs e)
+        {
+            txt_contactName.SelectAll();
+        }
+
+        private void combo_smb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (combo_smb.SelectedIndex)
+            {
+                case 0:
+                    /*txt_adminPass.Enabled = false;*/
+                    txt_contactName.Enabled = false;
+                    chk_sendToPrinter.Enabled = false;
+                    break;
+                case 1:
+                    /*txt_adminPass.Enabled = true;*/
+                    txt_contactName.Enabled = true;
+                    chk_sendToPrinter.Enabled = true;
+                    break;
             }
-        }        
+        }
     }
 }
