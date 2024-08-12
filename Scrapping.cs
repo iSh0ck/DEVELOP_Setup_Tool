@@ -12,7 +12,7 @@ namespace Vela31_Ineo
     {
         
         public static void Main(string[] args)
-        {
+        {         
             // Mise à jour du driver Chrome avec la version installée sur le PC
             new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
 

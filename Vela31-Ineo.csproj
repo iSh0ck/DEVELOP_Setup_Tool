@@ -146,6 +146,7 @@
     <Compile Include="Debug.Designer.cs">
       <DependentUpon>Debug.cs</DependentUpon>
     </Compile>
+    <Compile Include="Develop_Library.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
