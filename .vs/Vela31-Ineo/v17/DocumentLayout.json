@@ -3,28 +3,31 @@
   "WorkspaceRootPath": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Vela31-Ineo||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\develop_library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:develop_library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|e:\\documents\\github\\ish0ck\\vela31 - ineo\\home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:home.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,19 +49,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "Vela31-Ineo",
+              "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Vela31-Ineo.csproj",
+              "RelativeDocumentMoniker": "Vela31-Ineo.csproj",
+              "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Vela31-Ineo.csproj",
+              "RelativeToolTip": "Vela31-Ineo.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-13T18:25:37.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAjwJQAAAAnAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowC0AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-04-30T16:38:09.769Z"
+              "WhenOpened": "2023-04-30T16:38:09.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Develop_Library.cs",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Develop_Library.cs",
               "RelativeDocumentMoniker": "Develop_Library.cs",
@@ -71,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Home.cs [Design]",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Home.cs",
               "RelativeDocumentMoniker": "Home.cs",
@@ -83,20 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Home.Designer.cs",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Home.Designer.cs",
               "RelativeDocumentMoniker": "Home.Designer.cs",
               "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Home.Designer.cs",
               "RelativeToolTip": "Home.Designer.cs",
-              "ViewState": "AQIAADYBAAAAAAAAAAAjwFABAAAbAAAA",
+              "ViewState": "AQIAADsBAAAAAAAAAAAjwFEBAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-04-30T16:38:09.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ToDo.txt",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\ToDo.txt",
               "RelativeDocumentMoniker": "ToDo.txt",
@@ -104,18 +119,17 @@
               "RelativeToolTip": "ToDo.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2023-04-30T16:38:09.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-04-30T16:38:09.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Home.cs",
               "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Home.cs",
               "RelativeDocumentMoniker": "Home.cs",
               "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Home.cs",
               "RelativeToolTip": "Home.cs",
-              "ViewState": "AQIAAFMBAAAAAAAAAAArwGMBAAA2AAAA",
+              "ViewState": "AQIAAAQBAAAAAAAAAAAjwCEBAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2023-04-30T16:38:09.183Z",
               "EditorCaption": ""

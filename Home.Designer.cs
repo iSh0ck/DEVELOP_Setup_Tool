@@ -321,6 +321,7 @@ namespace Vela31_Ineo
             "Ineo+ 759",
             "Yes",
             "A3"}, -1);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.text_model_search = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             chk_sendToPrinter = new System.Windows.Forms.CheckBox();
@@ -736,6 +737,7 @@ namespace Vela31_Ineo
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.text_model_search);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Home";
             this.Text = "Vela31 - Home";
