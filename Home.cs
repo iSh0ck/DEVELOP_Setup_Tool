@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vela31_Ineo
@@ -247,7 +249,7 @@ namespace Vela31_Ineo
             }
         }
 
-        private void Start_install_btn_Click(object sender, EventArgs e)
+        private async void Start_install_btn_Click(object sender, EventArgs e)
         {
             // Actions lors du clic sur le bouton
 
@@ -280,14 +282,17 @@ namespace Vela31_Ineo
                 {
                     if (this.combo_smb != null && this.combo_smb.SelectedItem != null)
                     {
-                        // Téléchargement du driver
-                        Program.DownloadDriver("Windows 10", model_list.SelectedItems[0].Text);
+                        if (!chk_offlineMode.Checked)
+                        {
+                            // Téléchargement du driver
+                            await Program.DownloadDriver("Windows 10", model_list.SelectedItems[0].Text);
 
-                        // Unzip du driver dans le répertoir Download
-                        Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+                            // Unzip du driver dans le répertoir Download
+                            Program.UnzipArchive(Directory.GetCurrentDirectory() + @"\Download\driver.zip");
+                        }
 
                         // Installation du driver
-                        Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, null, null);
+                        await Program.InstallDriver(model_list.SelectedItems[0].Text, text_ip_address.Text, chk_offlineMode.Checked);
 
                         if (this.combo_smb.SelectedItem != null)
                         {
@@ -373,6 +378,16 @@ namespace Vela31_Ineo
                     txt_contactName.Enabled = true;
                     break;
             }
+        }
+
+        private void btn_SearchPrinter_MouseEnter(object sender, EventArgs e)
+        {
+            this.tt_btn_SearchPrinter.SetToolTip(btn_SearchPrinter, "Find printers on network using SNMP.");
+        }
+
+        private void btn_SearchPrinter_Click(object sender, EventArgs e)
+        {
+            Program.FindPrinters();
         }
     }
 }

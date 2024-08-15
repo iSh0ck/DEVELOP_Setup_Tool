@@ -1,11 +1,9 @@
-﻿using AngleSharp.Dom;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 namespace Vela31_Ineo

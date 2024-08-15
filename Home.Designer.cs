@@ -29,6 +29,7 @@ namespace Vela31_Ineo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Ineo 224e",
             "No",
@@ -324,6 +325,7 @@ namespace Vela31_Ineo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.text_model_search = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            chk_offlineMode = new System.Windows.Forms.CheckBox();
             chk_sendToPrinter = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -334,6 +336,7 @@ namespace Vela31_Ineo
             check_setAsDefault = new System.Windows.Forms.CheckBox();
             this.check_smb_only = new System.Windows.Forms.CheckBox();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btn_SearchPrinter = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             text_ip_address = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -345,6 +348,8 @@ namespace Vela31_Ineo
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Color = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Format = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tt_btn_SearchPrinter = new System.Windows.Forms.ToolTip(this.components);
+            progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -365,6 +370,7 @@ namespace Vela31_Ineo
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(chk_offlineMode);
             this.panel4.Controls.Add(chk_sendToPrinter);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.panel1);
@@ -378,13 +384,23 @@ namespace Vela31_Ineo
             this.panel4.Size = new System.Drawing.Size(210, 164);
             this.panel4.TabIndex = 2;
             // 
+            // chk_offlineMode
+            // 
+            chk_offlineMode.AutoSize = true;
+            chk_offlineMode.Location = new System.Drawing.Point(117, 141);
+            chk_offlineMode.Name = "chk_offlineMode";
+            chk_offlineMode.Size = new System.Drawing.Size(86, 17);
+            chk_offlineMode.TabIndex = 18;
+            chk_offlineMode.Text = "Offline Mode";
+            chk_offlineMode.UseVisualStyleBackColor = true;
+            // 
             // chk_sendToPrinter
             // 
             chk_sendToPrinter.AutoSize = true;
             chk_sendToPrinter.Location = new System.Drawing.Point(6, 141);
             chk_sendToPrinter.Name = "chk_sendToPrinter";
             chk_sendToPrinter.Size = new System.Drawing.Size(115, 17);
-            chk_sendToPrinter.TabIndex = 13;
+            chk_sendToPrinter.TabIndex = 17;
             chk_sendToPrinter.Text = "Add SMB to printer";
             chk_sendToPrinter.UseVisualStyleBackColor = true;
             chk_sendToPrinter.CheckedChanged += new System.EventHandler(chk_sendToPrinter_CheckedChanged);
@@ -396,7 +412,7 @@ namespace Vela31_Ineo
             this.panel2.Location = new System.Drawing.Point(6, 89);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(202, 24);
-            this.panel2.TabIndex = 9;
+            this.panel2.TabIndex = 12;
             this.panel2.TabStop = true;
             // 
             // label2
@@ -405,7 +421,7 @@ namespace Vela31_Ineo
             this.label2.Location = new System.Drawing.Point(3, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 13;
             this.label2.Text = "Contact name";
             // 
             // txt_contactName
@@ -413,7 +429,7 @@ namespace Vela31_Ineo
             txt_contactName.Location = new System.Drawing.Point(80, 3);
             txt_contactName.Name = "txt_contactName";
             txt_contactName.Size = new System.Drawing.Size(100, 20);
-            txt_contactName.TabIndex = 10;
+            txt_contactName.TabIndex = 14;
             txt_contactName.Text = "Contact name";
             txt_contactName.Click += new System.EventHandler(txt_contactName_Click);
             // 
@@ -424,7 +440,7 @@ namespace Vela31_Ineo
             this.panel1.Location = new System.Drawing.Point(6, 68);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 24);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 9;
             this.panel1.TabStop = true;
             // 
             // label1
@@ -433,7 +449,7 @@ namespace Vela31_Ineo
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Admin pass";
             // 
             // txt_adminPass
@@ -442,7 +458,7 @@ namespace Vela31_Ineo
             this.txt_adminPass.Location = new System.Drawing.Point(80, 1);
             this.txt_adminPass.Name = "txt_adminPass";
             this.txt_adminPass.Size = new System.Drawing.Size(100, 20);
-            this.txt_adminPass.TabIndex = 8;
+            this.txt_adminPass.TabIndex = 11;
             this.txt_adminPass.Text = "Admin password";
             this.txt_adminPass.Click += new System.EventHandler(this.txt_adminPass_Click);
             // 
@@ -452,7 +468,7 @@ namespace Vela31_Ineo
             check_setAsDefault.Location = new System.Drawing.Point(86, 120);
             check_setAsDefault.Name = "check_setAsDefault";
             check_setAsDefault.Size = new System.Drawing.Size(91, 17);
-            check_setAsDefault.TabIndex = 12;
+            check_setAsDefault.TabIndex = 16;
             check_setAsDefault.Text = "Set as default";
             check_setAsDefault.UseVisualStyleBackColor = true;
             // 
@@ -462,12 +478,13 @@ namespace Vela31_Ineo
             this.check_smb_only.Location = new System.Drawing.Point(6, 120);
             this.check_smb_only.Name = "check_smb_only";
             this.check_smb_only.Size = new System.Drawing.Size(73, 17);
-            this.check_smb_only.TabIndex = 11;
+            this.check_smb_only.TabIndex = 15;
             this.check_smb_only.Text = "SMB Only";
             this.check_smb_only.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.btn_SearchPrinter);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(text_ip_address);
             this.panel9.Location = new System.Drawing.Point(6, 23);
@@ -475,6 +492,19 @@ namespace Vela31_Ineo
             this.panel9.Size = new System.Drawing.Size(202, 24);
             this.panel9.TabIndex = 2;
             this.panel9.TabStop = true;
+            // 
+            // btn_SearchPrinter
+            // 
+            this.btn_SearchPrinter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SearchPrinter.Location = new System.Drawing.Point(180, 3);
+            this.btn_SearchPrinter.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_SearchPrinter.Name = "btn_SearchPrinter";
+            this.btn_SearchPrinter.Size = new System.Drawing.Size(20, 20);
+            this.btn_SearchPrinter.TabIndex = 5;
+            this.btn_SearchPrinter.Text = "🔎";
+            this.btn_SearchPrinter.UseVisualStyleBackColor = true;
+            this.btn_SearchPrinter.Click += new System.EventHandler(this.btn_SearchPrinter_Click);
+            this.btn_SearchPrinter.MouseEnter += new System.EventHandler(this.btn_SearchPrinter_MouseEnter);
             // 
             // label9
             // 
@@ -501,7 +531,7 @@ namespace Vela31_Ineo
             this.panel8.Location = new System.Drawing.Point(6, 46);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(202, 24);
-            this.panel8.TabIndex = 5;
+            this.panel8.TabIndex = 6;
             this.panel8.TabStop = true;
             // 
             // combo_smb
@@ -513,7 +543,7 @@ namespace Vela31_Ineo
             this.combo_smb.Location = new System.Drawing.Point(80, 2);
             this.combo_smb.Name = "combo_smb";
             this.combo_smb.Size = new System.Drawing.Size(100, 21);
-            this.combo_smb.TabIndex = 6;
+            this.combo_smb.TabIndex = 8;
             this.combo_smb.Tag = "";
             this.combo_smb.SelectedIndexChanged += new System.EventHandler(this.combo_smb_SelectedIndexChanged);
             // 
@@ -523,7 +553,7 @@ namespace Vela31_Ineo
             this.label8.Location = new System.Drawing.Point(3, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(30, 13);
-            this.label8.TabIndex = 0;
+            this.label8.TabIndex = 7;
             this.label8.Text = "SMB";
             // 
             // label4
@@ -542,7 +572,7 @@ namespace Vela31_Ineo
             this.start_install_btn.Location = new System.Drawing.Point(179, 211);
             this.start_install_btn.Name = "start_install_btn";
             this.start_install_btn.Size = new System.Drawing.Size(110, 31);
-            this.start_install_btn.TabIndex = 15;
+            this.start_install_btn.TabIndex = 20;
             this.start_install_btn.Text = "Start installation";
             this.start_install_btn.UseVisualStyleBackColor = true;
             this.start_install_btn.Click += new System.EventHandler(this.Start_install_btn_Click);
@@ -708,7 +738,7 @@ namespace Vela31_Ineo
             this.model_list.Name = "model_list";
             this.model_list.Size = new System.Drawing.Size(230, 193);
             this.model_list.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.model_list.TabIndex = 14;
+            this.model_list.TabIndex = 19;
             this.model_list.UseCompatibleStateImageBehavior = false;
             this.model_list.View = System.Windows.Forms.View.Details;
             // 
@@ -727,11 +757,20 @@ namespace Vela31_Ineo
             this.Format.Text = "Format";
             this.Format.Width = 64;
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new System.Drawing.Point(295, 215);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new System.Drawing.Size(172, 21);
+            progressBar1.TabIndex = 21;
+            progressBar1.Visible = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 247);
+            this.Controls.Add(progressBar1);
             this.Controls.Add(this.model_list);
             this.Controls.Add(this.start_install_btn);
             this.Controls.Add(this.panel4);
@@ -772,15 +811,19 @@ namespace Vela31_Ineo
         private System.Windows.Forms.ColumnHeader Format;
         public System.Windows.Forms.ComboBox combo_smb;
         public System.Windows.Forms.CheckBox check_smb_only;
-        public System.Windows.Forms.ListView model_list;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txt_adminPass;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_SearchPrinter;
+        private System.Windows.Forms.ToolTip tt_btn_SearchPrinter;
+        public System.Windows.Forms.ListView model_list;
+        public static System.Windows.Forms.ProgressBar progressBar1;
         public static System.Windows.Forms.CheckBox chk_sendToPrinter;
         public static System.Windows.Forms.TextBox text_ip_address;
         public static System.Windows.Forms.TextBox txt_contactName;
         public static System.Windows.Forms.CheckBox check_setAsDefault;
+        public static System.Windows.Forms.CheckBox chk_offlineMode;
     }
 }

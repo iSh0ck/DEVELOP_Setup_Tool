@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|e:\\documents\\github\\ish0ck\\vela31 - ineo\\todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|e:\\documents\\github\\ish0ck\\vela31 - ineo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{596ABAE4-1BC6-46FE-9BF8-F31D1EA754B7}|Vela31-Ineo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ToDo.txt",
+              "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\ToDo.txt",
+              "RelativeDocumentMoniker": "ToDo.txt",
+              "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\ToDo.txt",
+              "RelativeToolTip": "ToDo.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAByAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-08-15T21:03:32.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Documents\\GitHub\\iSh0ck\\Vela31 - Ineo\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T21:03:30.267Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

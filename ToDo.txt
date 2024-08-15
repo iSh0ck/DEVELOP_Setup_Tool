@@ -1,7 +1,4 @@
 ﻿ToDo:
 - A faire:
-	> "Auto-Fill"
-		* Si cocher ajout de la vérification que l'adresse IP soit bien renseignée
-
 	> "Auto-Scan"
-		* Fonction permettant la recherche automatique via SNMP des imprimantes DEVELOP en réseau
+		* Mettre en place un affichage dans une nouvelle fenêtre pour afficher la liste des imprimantes trouvées ou non.
