@@ -15,7 +15,7 @@ This software allows the installation of print drivers and the configuration of 
   - Network sharing of the folder with the necessary permissions added for the "scan" user.
   - Automatic sending of scan information to the machine's address book.
 
-## 🗒️ Prerequisites
+## 🗒️ Requirements
 
 - A compatible MFP DEVELOP device.
 - An internet connection for driver downloads if necessary.
