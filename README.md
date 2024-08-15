@@ -22,7 +22,7 @@ This software allows the installation of print drivers and the configuration of 
 
 ## 🖥️ Installation
 
-1. Check the latest version of the software from the [download link](https://github.com/iSh0ck/Vela31---Ineo/releases/tag/v1.2.0-beta.1).
+1. Check the latest version of the software from the [download link](https://github.com/iSh0ck/Vela31---Ineo/releases).
 2. Run the installation file and follow the on-screen instructions.
 
 ## ✉️ License
@@ -31,4 +31,4 @@ This software is provided "as is", without any kind of warranty, express or impl
 
 ---
 
-[View the latest version](https://github.com/iSh0ck/Vela31---Ineo/releases/tag/v1.2.0-beta.1)
+[View the latest version](https://github.com/iSh0ck/Vela31---Ineo/releases)
