@@ -1,4 +1,0 @@
-﻿ToDo:
-- A faire:
-	> "Auto-Scan"
-		* Mettre en place un affichage dans une nouvelle fenêtre pour afficher la liste des imprimantes trouvées ou non.

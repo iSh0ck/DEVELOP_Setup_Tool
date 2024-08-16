@@ -152,6 +152,12 @@
     <Reference Include="System.Management.Automation" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MFP_Found.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MFP_Found.Designer.cs">
+      <DependentUpon>MFP_Found.cs</DependentUpon>
+    </Compile>
     <Compile Include="Network_Tool.cs" />
     <Compile Include="Develop_Library.cs" />
     <Compile Include="Home.cs">
@@ -174,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MFP_Found.resx">
+      <DependentUpon>MFP_Found.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -202,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Develop_Logo.ico" />
-    <Content Include="ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">

@@ -13,7 +13,6 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static Vela31_Ineo.Develop_Library;
 using File = System.IO.File;
 
@@ -290,6 +289,8 @@ namespace Vela31_Ineo
             // Déclaration du tableau contenant les imprimantes trouvées
             IDictionary<string, string> printers = new Dictionary<string, string>();
 
+            MFP_Found mFP_Found = new MFP_Found();
+
             // Itérer sur chaque interface réseau
             foreach (var networkInterface in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -347,14 +348,16 @@ namespace Vela31_Ineo
             }
             else
             {
-                string lines = "";
-
                 foreach (var printer in printers)
                 {
-                    lines = lines + printer.ToString() + '\n';
+                    // Crée un nouvel objet ListViewItem pour chaque imprimante
+                    ListViewItem item = new ListViewItem(printer.Key);
+                    item.SubItems.Add(printer.Value);
+                    MFP_Found.listView1.Items.Add(item);
                 }
 
-                MessageBox.Show(lines, printers.Count + " printer(s) found");
+                mFP_Found.Text = printers.Count.ToString() + " printer(s) found";
+                mFP_Found.Show();
             }
         }
 
