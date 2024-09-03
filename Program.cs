@@ -13,10 +13,13 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Vela31_Ineo.Develop_Library;
+using static DEVELOP_Setup_Tool.Develop_Library;
 using File = System.IO.File;
+using System.Security.Principal;
+using Microsoft.Win32;
+using NetFwTypeLib;
 
-namespace Vela31_Ineo
+namespace DEVELOP_Setup_Tool
 {
     public static class PrinterClass
     {
@@ -36,11 +39,6 @@ namespace Vela31_Ineo
             Application.Run(new Home());
         }
 
-        /*
-         * 
-         * --------------------- OK ---------------------
-         * 
-         */
         public static async Task DownloadDriver(string os, string model_name)
         {
             // Téléchargement du driver depuis internet
@@ -83,23 +81,12 @@ namespace Vela31_Ineo
             Console.WriteLine($"Téléchargement à {e.ProgressPercentage}%");
         }
 
-        /*
-         * 
-         * ---------------------- OK ----------------------
-         * 
-         */
-
         public static void UnzipArchive(string file)
         {
             // Unzip du fichier 
             ZipFile.ExtractToDirectory(file, Directory.GetCurrentDirectory() + @"\Download");
         }
 
-        /*
-         * 
-         * --------------------- OK ---------------------
-         *         
-         */
         public static async Task InstallDriver(string model_name, string ipaddr, bool isOfflineMode)
         {
             // Lancement d'un CMD pour utiliser les scripts windows
@@ -262,11 +249,6 @@ namespace Vela31_Ineo
             
         }
 
-        /*
-         * 
-         * --------------------- OK ---------------------
-         * 
-         */
         public static async void SetupSMBInWebPanel(string ipaddr, string contactName, string hostname)
         {
             // Connexion au copieur + Récuppération du token
@@ -361,11 +343,6 @@ namespace Vela31_Ineo
             }
         }
 
-        /*
-         * 
-         * --------------------- OK ---------------------
-         * 
-         */
         public static void SetupSMB(String smbValue)
         {
             // Vérification si on doit setup ou non le SMB
@@ -378,7 +355,32 @@ namespace Vela31_Ineo
                     DirectoryEntry newUser = ad.Children.Add("Scan", "user");
                     newUser.Invoke("SetPassword", new object[] { "Sc@nner31" });
                     newUser.Invoke("Put", new object[] { "Description", "Scan user for Vela printers" });
+                    newUser.Properties["UserFlags"].Value = 0x0040 | 0x10000 | 0x0200; // UF_PASSWD_CANT_CHANGE | UF_DONT_EXPIRE_PASSWD | UF_NORMAL_ACCOUNT
                     newUser.CommitChanges();
+
+                    // Récupération du groupe "Utilisateurs"
+                    SecurityIdentifier securityIdentifier = new SecurityIdentifier("S-1-5-32-545");
+                    NTAccount ntAccount = (NTAccount)securityIdentifier.Translate(typeof(NTAccount));
+                    string[] groups = ntAccount.Value.Split('\\');
+
+                    // Ajout de l'utilisateur au groupe "Utilisateurs"
+                    DirectoryEntry group = new DirectoryEntry("WinNT://" + Environment.MachineName + "/" + groups[1] + ",group");
+                    group.Invoke("Add", new object[] { newUser.Path });
+                    group.CommitChanges();
+
+                    // Supprimer l'affichage de l'utilisateur dans l'interface WinLogon
+                    string registryKeyPath = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\SpecialAccounts\UserList";
+                    using (RegistryKey key = Registry.LocalMachine.CreateSubKey(registryKeyPath))
+                    {
+                        if (key != null)
+                        {
+                            // Ajouter la valeur pour cacher l'utilisateur
+                            key.SetValue(newUser.Name, 0, RegistryValueKind.DWord);
+                        }
+                    }
+
+                    // Ajout des règles dans le pare-feu Windows Defender pour autorisé le SMB
+                    AddSMBFirewallRule();
 
                     // Création du dossier
                     if (!Directory.Exists(@"C:\Scans"))
@@ -396,7 +398,7 @@ namespace Vela31_Ineo
                     cmd.Start();
 
                     // Vérifier si fonctionne sur un domaine
-                    cmd.StandardInput.WriteLine(@"net share Scans=C:\Scans /grant:scan,full");
+                    cmd.StandardInput.WriteLine(@"net share Scans=C:\Scans /grant:scan,change"); // CHANGE = Lecture/Modification | FULL = Controle total
                     cmd.StandardInput.Flush();
 
                     // Ajouter les permissions sur le dossier à l'utilisateur scan
@@ -432,6 +434,37 @@ namespace Vela31_Ineo
             }
         }
 
+        public static void AddSMBFirewallRule()
+        {
+            try
+            {
+                // Création d'une instance du gestionnaire de pare-feu
+                Type type = Type.GetTypeFromProgID("HNetCfg.FwPolicy2");
+                INetFwPolicy2 firewallPolicy = (INetFwPolicy2)Activator.CreateInstance(type);
+
+                // Ajout de la règle pour le port 139 et 445
+                INetFwRule smbRule = (INetFwRule)Activator.CreateInstance(Type.GetTypeFromProgID("HNetCfg.FwRule"));
+                smbRule.Name = "Allow SMB TCP Port 139 and 445";
+                smbRule.Description = "Allow SMB traffic over TCP port 139 and 445";
+                smbRule.Protocol = (int)NET_FW_IP_PROTOCOL_.NET_FW_IP_PROTOCOL_TCP;
+                smbRule.LocalPorts = "139,445";
+                smbRule.Direction = NET_FW_RULE_DIRECTION_.NET_FW_RULE_DIR_IN;
+                smbRule.Action = NET_FW_ACTION_.NET_FW_ACTION_ALLOW;
+                smbRule.Enabled = true;
+
+                // Définir les profils réseau : Privé, Public et Domaine
+                smbRule.Profiles = (int)(NET_FW_PROFILE_TYPE2_.NET_FW_PROFILE2_PRIVATE |
+                                         NET_FW_PROFILE_TYPE2_.NET_FW_PROFILE2_PUBLIC |
+                                         NET_FW_PROFILE_TYPE2_.NET_FW_PROFILE2_DOMAIN);
+
+                firewallPolicy.Rules.Add(smbRule);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Firewall");
+            }
+        }
+
         public static string GetDriverName(string model_name)
         {
             return drivers[model_name];
@@ -443,27 +476,29 @@ namespace Vela31_Ineo
             drivers.Add("Ineo 224", "Generic Universal PCL");
             drivers.Add("Ineo 224e", "Generic Universal PCL");
             drivers.Add("Ineo 284e", "Generic Universal PCL");
-            drivers.Add("Ineo 362", "Generic Universal PCL");
+            drivers.Add("Ineo 458e", "Generic Universal PCL");
+            drivers.Add("Ineo 558e", "Generic Universal PCL");
+            drivers.Add("Ineo 308e", "Generic Universal PCL");
             drivers.Add("Ineo 364e", "Generic Universal PCL");
             drivers.Add("Ineo 454e", "Generic Universal PCL");
-            drivers.Add("Ineo 550i", "Generic Universal PCL");
             drivers.Add("Ineo 554e", "Generic Universal PCL");
             drivers.Add("Ineo 654", "Generic Universal PCL");
             drivers.Add("Ineo 654e", "Generic Universal PCL");
             drivers.Add("Ineo 754", "Generic Universal PCL");
             drivers.Add("Ineo 754e", "Generic Universal PCL");
-            drivers.Add("Ineo 3320", "Generic Universal PCL");
-            drivers.Add("Ineo 4020", "Generic Universal PCL");
+            drivers.Add("Ineo 550i", "Generic Universal PCL");
+            drivers.Add("Ineo 301i", "Generic Universal PCL");
+            drivers.Add("Ineo 361i", "Generic Universal PCL");
+            drivers.Add("Ineo 451i", "Generic Universal PCL");
+            drivers.Add("Ineo 551i", "Generic Universal PCL");
+            drivers.Add("Ineo 651i", "Generic Universal PCL");
+            drivers.Add("Ineo 751i", "Generic Universal PCL");
             drivers.Add("Ineo+ 224", "Generic Universal PCL");
             drivers.Add("Ineo+ 224e", "Generic Universal PCL");
-            drivers.Add("Ineo+ 250", "Generic Universal PCL");
-            drivers.Add("Ineo+ 257i", "Generic Universal PCL");
             drivers.Add("Ineo+ 284", "Generic Universal PCL");
             drivers.Add("Ineo+ 284e", "Generic Universal PCL");
             drivers.Add("Ineo+ 364", "Generic Universal PCL");
             drivers.Add("Ineo+ 364e", "Generic Universal PCL");
-            drivers.Add("Ineo+ 451", "Generic Universal PCL");
-            drivers.Add("Ineo+ 452", "Generic Universal PCL");
             drivers.Add("Ineo+ 454", "Generic Universal PCL");
             drivers.Add("Ineo+ 454e", "Generic Universal PCL");
             drivers.Add("Ineo+ 554", "Generic Universal PCL");
@@ -472,9 +507,14 @@ namespace Vela31_Ineo
             drivers.Add("Ineo+ 654e", "Generic Universal PCL");
             drivers.Add("Ineo+ 754", "Generic Universal PCL");
             drivers.Add("Ineo+ 754e", "Generic Universal PCL");
-            drivers.Add("Ineo 458e", "Generic Universal PCL");
-            drivers.Add("Ineo 558e", "Generic Universal PCL");
-            drivers.Add("Ineo 308e", "Generic Universal PCL");
+            drivers.Add("Ineo+ 257i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 251i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 301i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 361i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 451i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 551i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 651i", "Generic Universal PCL");
+            drivers.Add("Ineo+ 751i", "Generic Universal PCL");
             drivers.Add("Universal_Printer_Driver", "Generic Universal PCL");
 
             // Adding Generic 65C-0iSeriesPCL printers to the list
@@ -512,19 +552,9 @@ namespace Vela31_Ineo
             drivers.Add("Ineo+ 227", "Generic 28C-8SeriesPCL");
             drivers.Add("Ineo+ 287", "Generic 28C-8SeriesPCL");
 
-            // Adding Generic C MF385-2SeriesPCL printers to the list
-            drivers.Add("Ineo+ 3851", "Generic C MF385-2SeriesPCL");
-
             // Adding Generic 70C-10SeriesPCL printers to the list
             drivers.Add("Ineo+ 659", "Generic 70C-10SeriesPCL");
             drivers.Add("Ineo+ 759", "Generic 70C-10SeriesPCL");
-
-            // Adding C MF311-1 PCL6 printers to the list
-            drivers.Add("Ineo+ 3110", "C MF311-1 PCL6");
-
-            // Adding C MF385-1 Series PCL6 printers to the list
-            drivers.Add("Ineo+ 3350", "C MF385-1 Series PCL6");
-            drivers.Add("Ineo+ 3850", "C MF385-1 Series PCL6");
 
             // Adding Generic 95BW-9SeriesPCL printers to the list
             drivers.Add("Ineo 758", "Generic 95BW-9SeriesPCL");
@@ -541,17 +571,6 @@ namespace Vela31_Ineo
             drivers.Add("Ineo 227", "Generic 36BW-8SeriesPCL");
             drivers.Add("Ineo 287", "Generic 36BW-8SeriesPCL");
             drivers.Add("Ineo 367", "Generic 36BW-8SeriesPCL");
-
-            // Adding Generic BW MF475-3SeriesPCL printers to the list
-            drivers.Add("Ineo 4052", "Generic BW MF475-3SeriesPCL");
-            drivers.Add("Ineo 4752", "Generic BW MF475-3SeriesPCL");
-
-            // Adding BW MF442-3_362-3 PCL6 printers to the list
-            drivers.Add("Ineo 4422", "BW MF442-3_362-3 PCL6");
-
-            // Adding BW MF475-1 Series PCL6 printers to the list
-            drivers.Add("Ineo 4050", "BW MF475-1 Series PCL6");
-            drivers.Add("Ineo 4750", "BW MF475-1 Series PCL6");
 
             // Adding Generic 30BW-6iSeriesPCL printers to the list
             drivers.Add("Ineo 266i", "Generic 30BW-6iSeriesPCL");

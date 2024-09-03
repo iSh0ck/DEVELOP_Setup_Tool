@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vela31_Ineo
+namespace DEVELOP_Setup_Tool
 {
     public partial class MFP_Found : Form
     {
@@ -22,7 +22,6 @@ namespace Vela31_Ineo
             if (listView1.SelectedItems.Count == 1)
             {
                 Home.text_ip_address.Text = listView1.SelectedItems[0].Text;
-                this.Close();
             }
             else
             {

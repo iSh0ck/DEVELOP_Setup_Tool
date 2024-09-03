@@ -1,10 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vela31_Ineo
+namespace DEVELOP_Setup_Tool
 {
     public partial class Home : Form
     {

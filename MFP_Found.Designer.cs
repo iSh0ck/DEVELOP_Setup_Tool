@@ -1,4 +1,4 @@
-﻿namespace Vela31_Ineo
+﻿namespace DEVELOP_Setup_Tool
 {
     partial class MFP_Found
     {

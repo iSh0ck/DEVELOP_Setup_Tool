@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Net.NetworkInformation;
 
-namespace Vela31_Ineo
+namespace DEVELOP_Setup_Tool
 {
     public static class Network_Tool
     {

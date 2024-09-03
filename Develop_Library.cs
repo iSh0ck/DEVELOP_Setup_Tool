@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace Vela31_Ineo
+namespace DEVELOP_Setup_Tool
 {
     public class Develop_Library
     {
