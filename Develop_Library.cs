@@ -10,13 +10,6 @@ namespace DEVELOP_Setup_Tool
 {
     public class Develop_Library
     {
-
-        // Voir si nécessaire de créer un objet session qui sera créer lors de l'appel de la fonction Login_As_Public ou Login_As_Admin
-        // Le constructeur de l'objet Session devrait comprendre un string contenant le token et un objet de type Cookie contenant le hash du token.
-
-        // La fonction doit retourner le token généré lors de la connexion.
-
-        // Prévoir la mise en place d'un mot de passe spécifié manuellement
         public static async Task<string> Login_As_Public(string ip)
         {
             // URL BASE
