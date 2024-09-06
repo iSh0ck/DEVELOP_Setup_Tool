@@ -1,4 +1,4 @@
-# Installation Software for MFP DEVELOP
+# Installation Software for DEVELOP MFP 
 
 This software allows the installation of print drivers and the configuration of scan settings for MFP DEVELOP devices.
 
